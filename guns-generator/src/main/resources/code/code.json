@@ -1,0 +1,12 @@
+{
+  "codeConfig": {
+    "type": "cn.enilu.flash.code.CodeConfig",
+    "fields": {
+      "entityModel": "guns-entity",
+      "daoModel": "guns-dao",
+      "serviceModel": "guns-service",
+      "controllerModel": "guns-admin",
+      "viewModel": "guns-admin"
+    }
+  }
+}
