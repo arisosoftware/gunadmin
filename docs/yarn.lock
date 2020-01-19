@@ -2072,7 +2072,7 @@ copy-webpack-plugin@^4.5.1:
     loader-utils "^1.1.0"
     minimatch "^3.0.4"
     p-limit "^1.0.0"
-    serialize-javascript "^1.4.0"
+    serialize-javascript "^2.1.1"
 
 core-js@^2.4.0, core-js@^2.5.3:
   version "2.6.5"
