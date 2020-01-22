@@ -1,6 +1,5 @@
 package cn.enilu.guns.utils;
 
-
 import com.google.common.base.Strings;
 import org.apache.commons.io.IOUtils;
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -25,7 +24,8 @@ public class MD5 {
 	/**
 	 * 16进制字符集
 	 */
-	private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+	private static final char[] HEX_DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
+			'E', 'F' };
 	/**
 	 * 循环次数
 	 */
@@ -109,7 +109,6 @@ public class MD5 {
 		return getFileMD5String(new File(fileName));
 	}
 
-
 	/**
 	 * * 将字节数组转换成16进制字符串
 	 *
@@ -146,13 +145,11 @@ public class MD5 {
 		return HEX_DIGITS[(bt & 0xf0) >> 4] + "" + HEX_DIGITS[bt & 0xf];
 	}
 
-
-
 	/**
 	 * shiro密码加密工具类
 	 *
 	 * @param credentials 密码
-	 * @param saltSource 密码盐
+	 * @param saltSource  密码盐
 	 * @return
 	 */
 	public static String md5(String credentials, String saltSource) {

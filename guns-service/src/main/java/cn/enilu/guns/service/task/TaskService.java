@@ -1,6 +1,5 @@
 package cn.enilu.guns.service.task;
 
-
 import cn.enilu.guns.bean.entity.system.Task;
 import cn.enilu.guns.bean.entity.system.TaskLog;
 import cn.enilu.guns.bean.exception.GunsException;
@@ -31,7 +30,7 @@ import java.util.List;
  * 任务计划服务
  */
 @Service
-public class TaskService extends BaseService<Task,Long,TaskRepository> {
+public class TaskService extends BaseService<Task, Long, TaskRepository> {
 	private static final Logger logger = LoggerFactory.getLogger(TaskService.class);
 	@Autowired
 	private TaskRepository taskRepository;
@@ -39,7 +38,6 @@ public class TaskService extends BaseService<Task,Long,TaskRepository> {
 	private TaskLogRepository taskLogRepository;
 	@Autowired
 	private JobService jobService;
-
 
 	public Task save(Task task) {
 		logger.info("新增定时任务%s", task.getName());
@@ -68,12 +66,10 @@ public class TaskService extends BaseService<Task,Long,TaskRepository> {
 		return task;
 	}
 
-
 	public boolean simpleUpdate(Task task) {
 		taskRepository.save(task);
 		return true;
 	}
-
 
 	public Task disable(Long id) {
 		Task task = get(id);
@@ -91,7 +87,6 @@ public class TaskService extends BaseService<Task,Long,TaskRepository> {
 		return task;
 	}
 
-
 	public Task enable(Long id) {
 		Task task = get(id);
 		task.setDisabled(false);
@@ -106,7 +101,7 @@ public class TaskService extends BaseService<Task,Long,TaskRepository> {
 				jobService.addJob(jobService.getJob(task));
 			}
 		} catch (SchedulerException e) {
-			throw  new GunsException(GunsExceptionEnum.TASK_CONFIG_ERROR);
+			throw new GunsException(GunsExceptionEnum.TASK_CONFIG_ERROR);
 		}
 		return task;
 	}
@@ -128,27 +123,28 @@ public class TaskService extends BaseService<Task,Long,TaskRepository> {
 		}
 	}
 
-
 	public Page<TaskLog> getTaskLogs(Page<TaskLog> page, Long taskId) {
 		Pageable pageable = null;
-		if(page.isOpenSort()) {
-			pageable = new PageRequest(page.getCurrent()-1, page.getSize(), page.isAsc() ? Sort.Direction.ASC : Sort.Direction.DESC, page.getOrderByField());
-		}else{
-			pageable = new PageRequest(page.getCurrent()-1,page.getSize(),Sort.Direction.DESC,"id");
+		if (page.isOpenSort()) {
+			pageable = new PageRequest(page.getCurrent() - 1, page.getSize(),
+					page.isAsc() ? Sort.Direction.ASC : Sort.Direction.DESC, page.getOrderByField());
+		} else {
+			pageable = new PageRequest(page.getCurrent() - 1, page.getSize(), Sort.Direction.DESC, "id");
 		}
 
-		org.springframework.data.domain.Page<TaskLog> taskLogPage = taskLogRepository.findAll(new  Specification<TaskLog>(){
+		org.springframework.data.domain.Page<TaskLog> taskLogPage = taskLogRepository
+				.findAll(new Specification<TaskLog>() {
 
-			@Override
-			public Predicate toPredicate(Root<TaskLog> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder
-					criteriaBuilder) {
-				List<Predicate> list = new ArrayList<Predicate>();
-				list.add(criteriaBuilder.equal(root.get("idTask").as(Long.class),taskId));
-				Predicate[] p = new Predicate[list.size()];
-				return criteriaBuilder.and(list.toArray(p));
-			}
-		},pageable);
-		page.setTotal(Integer.valueOf(taskLogPage.getTotalElements()+""));
+					@Override
+					public Predicate toPredicate(Root<TaskLog> root, CriteriaQuery<?> criteriaQuery,
+							CriteriaBuilder criteriaBuilder) {
+						List<Predicate> list = new ArrayList<Predicate>();
+						list.add(criteriaBuilder.equal(root.get("idTask").as(Long.class), taskId));
+						Predicate[] p = new Predicate[list.size()];
+						return criteriaBuilder.and(list.toArray(p));
+					}
+				}, pageable);
+		page.setTotal(Integer.valueOf(taskLogPage.getTotalElements() + ""));
 		page.setRecords(taskLogPage.getContent());
 		return page;
 	}

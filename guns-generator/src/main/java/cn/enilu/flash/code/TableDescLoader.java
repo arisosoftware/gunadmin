@@ -37,7 +37,7 @@ public class TableDescLoader extends Loader{
         DataSource ds = ioc.get(DataSource.class);
         Dao dao = new NutDao(ds);
         Sql sql = Sqls.create("select database()");
-
+ 
         sql.setCallback(new SqlCallback() {
             @Override
             public Object invoke(Connection conn, ResultSet rs, Sql sql) throws SQLException {

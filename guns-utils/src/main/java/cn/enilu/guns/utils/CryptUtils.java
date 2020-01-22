@@ -1,6 +1,5 @@
 package cn.enilu.guns.utils;
 
-
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
@@ -15,7 +14,8 @@ import java.util.Date;
 
 /**
  * 加密工具类
- * @author  enilu
+ * 
+ * @author enilu
  */
 public class CryptUtils {
 
@@ -196,6 +196,7 @@ public class CryptUtils {
 
 	/**
 	 * 根据密码和keyGenerator生成密钥。
+	 * 
 	 * @param key
 	 * @return
 	 */
@@ -246,6 +247,7 @@ public class CryptUtils {
 	public static byte[] decryptBASE64(String key) throws Exception {
 		return Base64.getDecoder().decode(key);
 	}
+
 	public static String encodeBASE64(byte[] bytes) {
 
 		String encode = Base64.getEncoder().encodeToString(bytes);
@@ -257,7 +259,7 @@ public class CryptUtils {
 	 * 文件内容生成BASE64编码的字符串
 	 */
 	public static String encodeBASE64(File file) {
-		Base64.Encoder encoder =  Base64.getEncoder();
+		Base64.Encoder encoder = Base64.getEncoder();
 		StringBuilder sb = new StringBuilder();
 		InputStream input = null;
 		try {
@@ -313,9 +315,11 @@ public class CryptUtils {
 		return decoder.decode(encoder);
 
 	}
+
 	public static String getSign(String privateKey) {
 		return getSign(privateKey, new Date());
 	}
+
 	public static String getMD5ofStr(String inStr) {
 		MessageDigest md5 = null;
 		try {
@@ -340,6 +344,7 @@ public class CryptUtils {
 
 		return "";
 	}
+
 	public static String getSign(String privateKey, Date date) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		String sign = getMD5ofStr(privateKey + sdf.format(date));

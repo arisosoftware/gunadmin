@@ -11,10 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @version 2018/8/14 0014
  */
 public class MenuRepositoryTest extends BaseApplicationStartTest {
-    @Autowired
-    private MenuRepository menuRepository;
-    @Test
-    public void deleteRelationByMenu() {
-        menuRepository.deleteRelationByMenu(203L);
-    }
+	@Autowired
+	private MenuRepository menuRepository;
+
+	@Test
+	public void deleteRelationByMenu() {
+		menuRepository.deleteRelationByMenu(203L);
+	}
 }

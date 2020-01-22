@@ -42,190 +42,188 @@ import java.util.Map;
 @RequestMapping("/menu")
 public class MenuController extends BaseController {
 
-    private static String PREFIX = "/system/menu/";
+	private static String PREFIX = "/system/menu/";
 
+	@Autowired
+	MenuService menuService;
 
-    @Autowired
-    MenuService menuService;
+	/**
+	 * 跳转到菜单列表列表页面
+	 */
+	@RequestMapping("")
+	public String index() {
+		return PREFIX + "menu.html";
+	}
 
-    /**
-     * 跳转到菜单列表列表页面
-     */
-    @RequestMapping("")
-    public String index() {
-        return PREFIX + "menu.html";
-    }
+	/**
+	 * 跳转到菜单列表列表页面
+	 */
+	@RequestMapping(value = "/menu_add")
+	public String menuAdd() {
+		return PREFIX + "menu_add.html";
+	}
 
-    /**
-     * 跳转到菜单列表列表页面
-     */
-    @RequestMapping(value = "/menu_add")
-    public String menuAdd() {
-        return PREFIX + "menu_add.html";
-    }
+	/**
+	 * 跳转到菜单详情列表页面
+	 */
+	@Permission(Const.ADMIN_NAME)
+	@RequestMapping(value = "/menu_edit/{menuId}")
+	public String menuEdit(@PathVariable Long menuId, Model model) {
+		if (ToolUtil.isEmpty(menuId)) {
+			throw new GunsException(BizExceptionEnum.REQUEST_NULL);
+		}
+		Menu menu = menuService.get(menuId);
 
-    /**
-     * 跳转到菜单详情列表页面
-     */
-    @Permission(Const.ADMIN_NAME)
-    @RequestMapping(value = "/menu_edit/{menuId}")
-    public String menuEdit(@PathVariable Long menuId, Model model) {
-        if (ToolUtil.isEmpty(menuId)) {
-            throw new GunsException(BizExceptionEnum.REQUEST_NULL);
-        }
-        Menu menu = menuService.get(menuId);
+		// 获取父级菜单的id
+		Menu pMenu = menuService.findByCode(menu.getPcode());
 
-        //获取父级菜单的id
-        Menu pMenu = menuService.findByCode(menu.getPcode());
+		// 如果父级是顶级菜单
+		if (pMenu == null) {
+			menu.setPcode("0");
+		}
+		Map<String, Object> menuMap = BeanKit.beanToMap(menu);
+		menuMap.put("pcodeName", ConstantFactory.me().getMenuNameByCode(menu.getPcode()));
+		model.addAttribute("menu", menuMap);
+		LogObjectHolder.me().set(menu);
+		return PREFIX + "menu_edit.html";
+	}
 
-        //如果父级是顶级菜单
-        if (pMenu == null) {
-            menu.setPcode("0");
-        }
-        Map<String, Object> menuMap = BeanKit.beanToMap(menu);
-        menuMap.put("pcodeName", ConstantFactory.me().getMenuNameByCode(menu.getPcode()));
-        model.addAttribute("menu", menuMap);
-        LogObjectHolder.me().set(menu);
-        return PREFIX + "menu_edit.html";
-    }
+	/**
+	 * 修该菜单
+	 */
+	@Permission(Const.ADMIN_NAME)
+	@RequestMapping(value = "/edit")
+	@BussinessLog(value = "修改菜单", key = "name", dict = MenuDict.class)
+	@ResponseBody
+	public Tip edit(@Valid Menu menu, BindingResult result) {
+		if (result.hasErrors()) {
+			throw new GunsException(BizExceptionEnum.REQUEST_NULL);
+		}
+		// 设置父级菜单编号
+		menuService.menuSetPcode(menu);
+		menu.setStatus(MenuStatus.ENABLE.getCode());
 
-    /**
-     * 修该菜单
-     */
-    @Permission(Const.ADMIN_NAME)
-    @RequestMapping(value = "/edit")
-    @BussinessLog(value = "修改菜单", key = "name", dict = MenuDict.class)
-    @ResponseBody
-    public Tip edit(@Valid Menu menu, BindingResult result) {
-        if (result.hasErrors()) {
-            throw new GunsException(BizExceptionEnum.REQUEST_NULL);
-        }
-        //设置父级菜单编号
-        menuService.menuSetPcode(menu);
-        menu.setStatus(MenuStatus.ENABLE.getCode());
+		menuService.update(menu);
+		return SUCCESS_TIP;
+	}
 
-        menuService.update(menu);
-        return SUCCESS_TIP;
-    }
+	/**
+	 * 获取菜单列表
+	 */
+	@Permission(Const.ADMIN_NAME)
+	@RequestMapping(value = "/list")
+	@ResponseBody
+	public Object list(@RequestParam(required = false) String menuName, @RequestParam(required = false) String level) {
+		List<Menu> menus = null;
+		if (Strings.isNullOrEmpty(menuName) && Strings.isNullOrEmpty(level)) {
+			menus = this.menuService.queryAll();
+		}
+		if (!Strings.isNullOrEmpty(menuName) && !Strings.isNullOrEmpty(level)) {
+			menus = this.menuService.findByNameLikeAndLevels("%" + menuName + "%", Integer.valueOf(level));
+		}
+		if (!Strings.isNullOrEmpty(menuName) && Strings.isNullOrEmpty(level)) {
+			menus = this.menuService.findByNameLike("%" + menuName + "%");
+		}
+		if (Strings.isNullOrEmpty(menuName) && !Strings.isNullOrEmpty(level)) {
+			menus = this.menuService.findByLevels(Integer.valueOf(level));
+		}
 
-    /**
-     * 获取菜单列表
-     */
-    @Permission(Const.ADMIN_NAME)
-    @RequestMapping(value = "/list")
-    @ResponseBody
-    public Object list(@RequestParam(required = false) String menuName, @RequestParam(required = false) String level) {
-        List<Menu> menus = null;
-        if (Strings.isNullOrEmpty(menuName) && Strings.isNullOrEmpty(level)) {
-            menus = (List<Menu>) this.menuService.queryAll();
-        }
-        if (!Strings.isNullOrEmpty(menuName) && !Strings.isNullOrEmpty(level)) {
-            menus = this.menuService.findByNameLikeAndLevels("%" + menuName + "%", Integer.valueOf(level));
-        }
-        if (!Strings.isNullOrEmpty(menuName) && Strings.isNullOrEmpty(level)) {
-            menus = this.menuService.findByNameLike("%" + menuName + "%");
-        }
-        if (Strings.isNullOrEmpty(menuName) && !Strings.isNullOrEmpty(level)) {
-            menus = this.menuService.findByLevels(Integer.valueOf(level));
-        }
+		return super.warpObject(new MenuWarpper(BeanUtil.objectsToMaps(menus)));
+	}
 
-        return super.warpObject(new MenuWarpper(BeanUtil.objectsToMaps(menus)));
-    }
+	/**
+	 * 新增菜单
+	 */
+	@Permission(Const.ADMIN_NAME)
+	@RequestMapping(value = "/add")
+	@BussinessLog(value = "菜单新增", key = "name", dict = MenuDict.class)
+	@ResponseBody
+	public Tip add(@Valid Menu menu, BindingResult result) {
+		if (result.hasErrors()) {
+			throw new GunsException(BizExceptionEnum.REQUEST_NULL);
+		}
 
-    /**
-     * 新增菜单
-     */
-    @Permission(Const.ADMIN_NAME)
-    @RequestMapping(value = "/add")
-    @BussinessLog(value = "菜单新增", key = "name", dict = MenuDict.class)
-    @ResponseBody
-    public Tip add(@Valid Menu menu, BindingResult result) {
-        if (result.hasErrors()) {
-            throw new GunsException(BizExceptionEnum.REQUEST_NULL);
-        }
+		// 判断是否存在该编号
+		String existedMenuName = ConstantFactory.me().getMenuNameByCode(menu.getCode());
+		if (ToolUtil.isNotEmpty(existedMenuName)) {
+			throw new GunsException(BizExceptionEnum.EXISTED_THE_MENU);
+		}
 
-        //判断是否存在该编号
-        String existedMenuName = ConstantFactory.me().getMenuNameByCode(menu.getCode());
-        if (ToolUtil.isNotEmpty(existedMenuName)) {
-            throw new GunsException(BizExceptionEnum.EXISTED_THE_MENU);
-        }
+		// 设置父级菜单编号
+		menuService.menuSetPcode(menu);
+		menu.setStatus(MenuStatus.ENABLE.getCode());
+		menuService.insert(menu);
+		return SUCCESS_TIP;
+	}
 
-        //设置父级菜单编号
-        menuService.menuSetPcode(menu);
-        menu.setStatus(MenuStatus.ENABLE.getCode());
-        menuService.insert(menu);
-        return SUCCESS_TIP;
-    }
+	/**
+	 * 删除菜单
+	 */
+	@Permission(Const.ADMIN_NAME)
+	@RequestMapping(value = "/remove")
+	@BussinessLog(value = "删除菜单", key = "menuId", dict = MenuDict.class)
+	@ResponseBody
+	public Tip remove(@RequestParam Long menuId) {
+		if (ToolUtil.isEmpty(menuId)) {
+			throw new GunsException(BizExceptionEnum.REQUEST_NULL);
+		}
 
-    /**
-     * 删除菜单
-     */
-    @Permission(Const.ADMIN_NAME)
-    @RequestMapping(value = "/remove")
-    @BussinessLog(value = "删除菜单", key = "menuId", dict = MenuDict.class)
-    @ResponseBody
-    public Tip remove(@RequestParam Long menuId) {
-        if (ToolUtil.isEmpty(menuId)) {
-            throw new GunsException(BizExceptionEnum.REQUEST_NULL);
-        }
+		// 缓存菜单的名称
+		LogObjectHolder.me().set(ConstantFactory.me().getMenuName(menuId));
 
-        //缓存菜单的名称
-        LogObjectHolder.me().set(ConstantFactory.me().getMenuName(menuId));
+		this.menuService.delMenuContainSubMenus(menuId);
+		return SUCCESS_TIP;
+	}
 
-        this.menuService.delMenuContainSubMenus(menuId);
-        return SUCCESS_TIP;
-    }
+	/**
+	 * 查看菜单
+	 */
+	@RequestMapping(value = "/view/{menuId}")
+	@ResponseBody
+	public Tip view(@PathVariable Long menuId) {
+		if (ToolUtil.isEmpty(menuId)) {
+			throw new GunsException(BizExceptionEnum.REQUEST_NULL);
+		}
+		menuService.get(menuId);
+		return SUCCESS_TIP;
+	}
 
-    /**
-     * 查看菜单
-     */
-    @RequestMapping(value = "/view/{menuId}")
-    @ResponseBody
-    public Tip view(@PathVariable Long menuId) {
-        if (ToolUtil.isEmpty(menuId)) {
-            throw new GunsException(BizExceptionEnum.REQUEST_NULL);
-        }
-        menuService.get(menuId);
-        return SUCCESS_TIP;
-    }
+	/**
+	 * 获取菜单列表(首页用)
+	 */
+	@RequestMapping(value = "/menuTreeList")
+	@ResponseBody
+	public List<ZTreeNode> menuTreeList() {
+		List<ZTreeNode> roleTreeList = this.menuService.menuTreeList();
+		return roleTreeList;
+	}
 
-    /**
-     * 获取菜单列表(首页用)
-     */
-    @RequestMapping(value = "/menuTreeList")
-    @ResponseBody
-    public List<ZTreeNode> menuTreeList() {
-        List<ZTreeNode> roleTreeList = this.menuService.menuTreeList();
-        return roleTreeList;
-    }
+	/**
+	 * 获取菜单列表(选择父级菜单用)
+	 */
+	@RequestMapping(value = "/selectMenuTreeList")
+	@ResponseBody
+	public List<ZTreeNode> selectMenuTreeList() {
+		List<ZTreeNode> roleTreeList = this.menuService.menuTreeList();
+		roleTreeList.add(ZTreeNode.createParent());
+		return roleTreeList;
 
-    /**
-     * 获取菜单列表(选择父级菜单用)
-     */
-    @RequestMapping(value = "/selectMenuTreeList")
-    @ResponseBody
-    public List<ZTreeNode> selectMenuTreeList() {
-        List<ZTreeNode> roleTreeList = this.menuService.menuTreeList();
-        roleTreeList.add(ZTreeNode.createParent());
-        return roleTreeList;
+	}
 
-    }
-
-    /**
-     * 获取角色列表
-     */
-    @RequestMapping(value = "/menuTreeListByRoleId/{roleId}")
-    @ResponseBody
-    public List<ZTreeNode> menuTreeListByRoleId(@PathVariable Integer roleId) {
-        List<Long> menuIds = this.menuService.getMenuIdsByRoleId(roleId);
-        if (ToolUtil.isEmpty(menuIds)) {
-            List<ZTreeNode> roleTreeList = this.menuService.menuTreeList();
-            return roleTreeList;
-        } else {
-            List<ZTreeNode> roleTreeListByUserId = this.menuService.menuTreeListByMenuIds(menuIds);
-            return roleTreeListByUserId;
-        }
-    }
-
+	/**
+	 * 获取角色列表
+	 */
+	@RequestMapping(value = "/menuTreeListByRoleId/{roleId}")
+	@ResponseBody
+	public List<ZTreeNode> menuTreeListByRoleId(@PathVariable Integer roleId) {
+		List<Long> menuIds = this.menuService.getMenuIdsByRoleId(roleId);
+		if (ToolUtil.isEmpty(menuIds)) {
+			List<ZTreeNode> roleTreeList = this.menuService.menuTreeList();
+			return roleTreeList;
+		} else {
+			List<ZTreeNode> roleTreeListByUserId = this.menuService.menuTreeListByMenuIds(menuIds);
+			return roleTreeListByUserId;
+		}
+	}
 
 }

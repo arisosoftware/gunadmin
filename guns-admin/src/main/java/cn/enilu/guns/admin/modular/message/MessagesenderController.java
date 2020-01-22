@@ -19,64 +19,62 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/message/sender")
 public class MessagesenderController extends BaseController {
 
-    private static String PREFIX = "/message/sender/";
-    @Autowired
-    private MessagesenderService messagesenderService;
+	private static String PREFIX = "/message/sender/";
+	@Autowired
+	private MessagesenderService messagesenderService;
 
-    /**
-     * 跳转到首页
-     */
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public String index() {
-        return PREFIX + "sender.html";
-    }
+	/**
+	 * 跳转到首页
+	 */
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String index() {
+		return PREFIX + "sender.html";
+	}
 
-    /**
-     * 跳转到添加参数
-     */
-    @RequestMapping("/add")
-    public String add() {
-        return PREFIX + "sender_add.html";
-    }
+	/**
+	 * 跳转到添加参数
+	 */
+	@RequestMapping("/add")
+	public String add() {
+		return PREFIX + "sender_add.html";
+	}
 
-    /**
-     * 跳转到修改参数
-     */
-    @RequestMapping("/update/{id}")
-    public String update(@PathVariable Long id, Model model) {
-        MessageSender sender = messagesenderService.get(id);
-        model.addAttribute("item", sender);
-        return PREFIX + "sender_edit.html";
-    }
+	/**
+	 * 跳转到修改参数
+	 */
+	@RequestMapping("/update/{id}")
+	public String update(@PathVariable Long id, Model model) {
+		MessageSender sender = messagesenderService.get(id);
+		model.addAttribute("item", sender);
+		return PREFIX + "sender_edit.html";
+	}
 
-    @RequestMapping(value = "/list", method = RequestMethod.POST)
-    @ResponseBody
-    public Object list() {
-        Page<MessageSender> page = new PageFactory<MessageSender>().defaultPage();
-        page = messagesenderService.queryPage(page);
-        page.setRecords(page.getRecords());
-        return packForBT(page);
-    }
+	@RequestMapping(value = "/list", method = RequestMethod.POST)
+	@ResponseBody
+	public Object list() {
+		Page<MessageSender> page = new PageFactory<MessageSender>().defaultPage();
+		page = messagesenderService.queryPage(page);
+		page.setRecords(page.getRecords());
+		return packForBT(page);
+	}
 
+	@RequestMapping(method = RequestMethod.POST)
+	@BussinessLog(value = "保存消息发送器", key = "name", dict = CommonDict.class)
+	@ResponseBody
+	public Object save(@ModelAttribute MessageSender tMessageSender) {
+		messagesenderService.save(tMessageSender);
+		return SUCCESS_TIP;
+	}
 
-    @RequestMapping(method = RequestMethod.POST)
-    @BussinessLog(value = "保存消息发送器", key = "name", dict = CommonDict.class)
-    @ResponseBody
-    public Object save(@ModelAttribute MessageSender tMessageSender) {
-        messagesenderService.save(tMessageSender);
-        return SUCCESS_TIP;
-    }
+	@RequestMapping(method = RequestMethod.DELETE)
+	@BussinessLog(value = "删除消息发送器", key = "id", dict = CommonDict.class)
+	@ResponseBody
+	public Object remove(Long id) throws GunsException {
+		if (ToolUtil.isEmpty(id)) {
+			throw new GunsException(BizExceptionEnum.REQUEST_NULL);
+		}
+		messagesenderService.delete(id);
+		return SUCCESS_TIP;
 
-    @RequestMapping(method = RequestMethod.DELETE)
-    @BussinessLog(value = "删除消息发送器", key = "id", dict = CommonDict.class)
-    @ResponseBody
-    public Object remove(Long id) throws GunsException {
-        if (ToolUtil.isEmpty(id)) {
-            throw new GunsException(BizExceptionEnum.REQUEST_NULL);
-        }
-        messagesenderService.delete(id);
-        return SUCCESS_TIP;
-
-
-    }
+	}
 }

@@ -33,114 +33,112 @@ import java.util.List;
 @RequestMapping("/notice")
 public class NoticeController extends BaseController {
 
-    private String PREFIX = "/system/notice/";
+	private String PREFIX = "/system/notice/";
 
-    @Resource
-    private NoticeService noticeService;
+	@Resource
+	private NoticeService noticeService;
 
+	/**
+	 * 跳转到通知列表首页
+	 */
+	@RequestMapping("")
+	public String index() {
+		return PREFIX + "notice.html";
+	}
 
+	/**
+	 * 跳转到添加通知
+	 */
+	@RequestMapping("/notice_add")
+	public String noticeAdd() {
+		return PREFIX + "notice_add.html";
+	}
 
-    /**
-     * 跳转到通知列表首页
-     */
-    @RequestMapping("")
-    public String index() {
-        return PREFIX + "notice.html";
-    }
+	/**
+	 * 跳转到修改通知
+	 */
+	@RequestMapping("/notice_update/{noticeId}")
+	public String noticeUpdate(@PathVariable Long noticeId, Model model) {
+		Notice notice = ConstantFactory.me().getNotice(noticeId);
+		model.addAttribute("notice", notice);
+		LogObjectHolder.me().set(notice);
+		return PREFIX + "notice_edit.html";
+	}
 
-    /**
-     * 跳转到添加通知
-     */
-    @RequestMapping("/notice_add")
-    public String noticeAdd() {
-        return PREFIX + "notice_add.html";
-    }
+	/**
+	 * 跳转到首页通知
+	 */
+	@RequestMapping("/hello")
+	public String hello() {
+		List<Notice> notices = noticeService.queryAll();
+		super.setAttr("noticeList", notices);
+		return "/blackboard.html";
+	}
 
-    /**
-     * 跳转到修改通知
-     */
-    @RequestMapping("/notice_update/{noticeId}")
-    public String noticeUpdate(@PathVariable Long noticeId, Model model) {
-        Notice notice = ConstantFactory.me().getNotice(noticeId);
-        model.addAttribute("notice",notice);
-        LogObjectHolder.me().set(notice);
-        return PREFIX + "notice_edit.html";
-    }
+	/**
+	 * 获取通知列表
+	 */
+	@RequestMapping(value = "/list")
+	@ResponseBody
+	public Object list(String condition) {
+		List<Notice> list = null;
+		if (Strings.isNullOrEmpty(condition)) {
+			list = this.noticeService.queryAll();
+		} else {
+			list = noticeService.findByTitleLike("%" + condition + "%");
+		}
+		return super.warpObject(new NoticeWrapper(BeanUtil.objectsToMaps(list)));
+	}
 
-    /**
-     * 跳转到首页通知
-     */
-    @RequestMapping("/hello")
-    public String hello() {
-        List<Notice> notices = (List<Notice>) noticeService.queryAll();
-        super.setAttr("noticeList",notices);
-        return "/blackboard.html";
-    }
+	/**
+	 * 新增通知
+	 */
+	@RequestMapping(value = "/add")
+	@ResponseBody
+	@BussinessLog(value = "新增通知", key = "title", dict = NoticeMap.class)
+	public Object add(Notice notice) {
+		if (ToolUtil.isOneEmpty(notice, notice.getTitle(), notice.getContent())) {
+			throw new GunsException(BizExceptionEnum.REQUEST_NULL);
+		}
+		if (notice.getId() == null) {
+			noticeService.insert(notice);
+		} else {
+			noticeService.update(notice);
+		}
+		return SUCCESS_TIP;
+	}
 
-    /**
-     * 获取通知列表
-     */
-    @RequestMapping(value = "/list")
-    @ResponseBody
-    public Object list(String condition) {
-        List<Notice> list = null;
-        if(Strings.isNullOrEmpty(condition)) {
-         list = (List<Notice>) this.noticeService.queryAll();
-        }else{
-            list = noticeService.findByTitleLike("%"+condition+"%");
-        }
-        return super.warpObject(new NoticeWrapper(BeanUtil.objectsToMaps(list)));
-    }
+	/**
+	 * 删除通知
+	 */
+	@RequestMapping(value = "/delete")
+	@ResponseBody
+	@BussinessLog(value = "删除通知", key = "noticeId", dict = NoticeMap.class)
+	public Object delete(@RequestParam Long noticeId) {
 
-    /**
-     * 新增通知
-     */
-    @RequestMapping(value = "/add")
-    @ResponseBody
-    @BussinessLog(value = "新增通知",key = "title",dict = NoticeMap.class)
-    public Object add(Notice notice) {
-        if (ToolUtil.isOneEmpty(notice, notice.getTitle(), notice.getContent())) {
-            throw new GunsException(BizExceptionEnum.REQUEST_NULL);
-        }
-        if(notice.getId()==null){
-            noticeService.insert(notice);
-        }else {
-            noticeService.update(notice);
-        }
-        return SUCCESS_TIP;
-    }
+		// 缓存通知名称
+		LogObjectHolder.me().set(ConstantFactory.me().getNoticeTitle(noticeId));
 
-    /**
-     * 删除通知
-     */
-    @RequestMapping(value = "/delete")
-    @ResponseBody
-    @BussinessLog(value = "删除通知",key = "noticeId",dict = NoticeMap.class)
-    public Object delete(@RequestParam Long noticeId) {
+		this.noticeService.delete(noticeId);
 
-        //缓存通知名称
-        LogObjectHolder.me().set(ConstantFactory.me().getNoticeTitle(noticeId));
+		return SUCCESS_TIP;
+	}
 
-        this.noticeService.delete(noticeId);
-
-        return SUCCESS_TIP;
-    }
-
-    /**
-     * 修改通知
-     */
-    @RequestMapping(value = "/update")
-    @ResponseBody
-    @BussinessLog(value = "修改通知",key = "title",dict = NoticeMap.class)
-    public Object update(Notice notice) {
-        if (ToolUtil.isOneEmpty(notice, notice.getId(), notice.getTitle(), notice.getContent())) {
-            throw new GunsException(BizExceptionEnum.REQUEST_NULL);
-        }
-        Notice old = ConstantFactory.me().getNotice(notice.getId());
-        old.setTitle(notice.getTitle());
-        old.setContent(notice.getContent());
-        noticeService.update(old);
-        return SUCCESS_TIP;
-    }
+	/**
+	 * 修改通知
+	 */
+	@RequestMapping(value = "/update")
+	@ResponseBody
+	@BussinessLog(value = "修改通知", key = "title", dict = NoticeMap.class)
+	public Object update(Notice notice) {
+		if (ToolUtil.isOneEmpty(notice, notice.getId(), notice.getTitle(), notice.getContent())) {
+			throw new GunsException(BizExceptionEnum.REQUEST_NULL);
+		}
+		Notice old = ConstantFactory.me().getNotice(notice.getId());
+		old.setTitle(notice.getTitle());
+		old.setContent(notice.getContent());
+		noticeService.update(old);
+		return SUCCESS_TIP;
+	}
 
 }

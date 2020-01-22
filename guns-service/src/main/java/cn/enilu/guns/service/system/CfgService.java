@@ -15,22 +15,24 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class CfgService extends BaseService<Cfg,Long,CfgRepository> {
-    @Autowired
-    private ConfigCache configCache;
-    public Cfg saveOrUpdate(Cfg cfg) {
-        if(cfg.getId()==null){
-            insert(cfg);
-        }else{
-            update(cfg);
-        }
-        configCache.cache();
-        return cfg;
-    }
-    @Override
-    public void delete(Long id) {
-        super.delete(id);
-        configCache.cache();
-    }
+public class CfgService extends BaseService<Cfg, Long, CfgRepository> {
+	@Autowired
+	private ConfigCache configCache;
+
+	public Cfg saveOrUpdate(Cfg cfg) {
+		if (cfg.getId() == null) {
+			insert(cfg);
+		} else {
+			update(cfg);
+		}
+		configCache.cache();
+		return cfg;
+	}
+
+	@Override
+	public void delete(Long id) {
+		super.delete(id);
+		configCache.cache();
+	}
 
 }

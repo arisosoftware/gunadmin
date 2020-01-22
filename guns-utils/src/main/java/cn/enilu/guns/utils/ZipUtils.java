@@ -8,17 +8,16 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
-
 /**
  * 压缩和解压缩
  * 
  * @author
- * */
+ */
 public class ZipUtils {
 	/**
 	 * 日志记录，为静态变量，防止多次实例化
 	 * 
-	 * */
+	 */
 //	private static Logger log = Logger.getLogger(ZipUtils.class);
 	/**
 	 * 每次读入大小
@@ -28,10 +27,8 @@ public class ZipUtils {
 	/**
 	 * 做成压缩文件
 	 * 
-	 * @param baseDir
-	 *            压缩文件夹
-	 * @param zipFileName
-	 *            生成压缩文件名
+	 * @param baseDir     压缩文件夹
+	 * @param zipFileName 生成压缩文件名
 	 * @return 是否成功
 	 */
 	public static boolean zipFile(String baseDir, String zipFileName) {
@@ -51,12 +48,11 @@ public class ZipUtils {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * 做成压缩文件
 	 * 
-	 * @param baseDir
-	 *            压缩文件夹
+	 * @param baseDir 压缩文件夹
 	 * @return 是否成功
 	 */
 	public static String zipFile(String baseDir) {
@@ -89,16 +85,13 @@ public class ZipUtils {
 	/**
 	 * 压缩包中添加文件
 	 * 
-	 * @param zos
-	 *            压缩包对象
-	 * @param file
-	 *            文件对象
-	 * @param filePath
-	 *            在压缩包中的路径
+	 * @param zos      压缩包对象
+	 * @param file     文件对象
+	 * @param filePath 在压缩包中的路径
 	 * @return 是否成功
 	 */
-	private static boolean zipAddFile(ZipOutputStream zos, File file,
-									  String filePath) throws FileNotFoundException, IOException {
+	private static boolean zipAddFile(ZipOutputStream zos, File file, String filePath)
+			throws FileNotFoundException, IOException {
 		ZipEntry ze = new ZipEntry(filePath);
 		ze.setSize(file.length());
 		ze.setTime(file.lastModified());
@@ -118,14 +111,12 @@ public class ZipUtils {
 	/**
 	 * 解压缩文件
 	 * 
-	 * @param zipName
-	 *            包的文件名
-	 * @param targetDirName
-	 *            需解压到的目录
+	 * @param zipName       包的文件名
+	 * @param targetDirName 需解压到的目录
 	 * @return 是否成功
 	 */
 	public static boolean upZipFile(String zipName, String targetDirName) {
-		ZipFile zipFile =null;
+		ZipFile zipFile = null;
 		try {
 			zipFile = new ZipFile(zipName);
 			if (!targetDirName.endsWith(File.separator)) {
@@ -165,10 +156,11 @@ public class ZipUtils {
 			return true;
 		} catch (Exception e) {
 //			log.error("解压缩错误:错误原因如下:" + e.getMessage());
-		}finally{
-			try{
-			zipFile.close();
-			}catch(Exception e){}
+		} finally {
+			try {
+				zipFile.close();
+			} catch (Exception e) {
+			}
 		}
 		return false;
 	}
@@ -176,10 +168,8 @@ public class ZipUtils {
 	/**
 	 * 生成文件在压缩包中的路径
 	 * 
-	 * @param baseDir
-	 *            压缩包所在文件夹路径
-	 * @param realFile
-	 *            文件对象
+	 * @param baseDir  压缩包所在文件夹路径
+	 * @param realFile 文件对象
 	 * @return 文件在压缩包中的路径
 	 */
 	private static String getAbsFileName(String baseDir, File realFile) {
@@ -203,8 +193,7 @@ public class ZipUtils {
 	/**
 	 * 获取文件夹下所有文件
 	 * 
-	 * @param baseDir
-	 *            文件夹路径
+	 * @param baseDir 文件夹路径
 	 * @return 文件集合
 	 */
 	private static List<File> getSubFiles(File baseDir) {
@@ -220,12 +209,12 @@ public class ZipUtils {
 		}
 		return ret;
 	}
-	
+
 	public static boolean isExist(String path) {
 		File file = new File(path);
 		return file.exists();
 	}
-	
+
 	public static boolean createDirectory(String path) {
 		File file = new File(path);
 		if (!isExist(path)) {
@@ -233,7 +222,7 @@ public class ZipUtils {
 		}
 		return true;
 	}
-	
+
 	public static boolean deleteDirectory(String path) {
 		File f = new File(path);
 		if (isExist(path)) {

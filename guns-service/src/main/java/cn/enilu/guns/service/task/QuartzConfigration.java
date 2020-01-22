@@ -7,9 +7,9 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 @Configuration
 public class QuartzConfigration {
 
-    @Bean(name = "scheduler")
-    public SchedulerFactoryBean schedulerFactory() {
-        SchedulerFactoryBean bean = new SchedulerFactoryBean();
-        return bean;
-    }
+	@Bean(name = "scheduler")
+	public SchedulerFactoryBean schedulerFactory() {
+		SchedulerFactoryBean bean = new SchedulerFactoryBean();
+		return bean;
+	}
 }

@@ -20,59 +20,58 @@ import java.util.List;
  */
 @Service
 public class ConfigCacheImpl implements ConfigCache {
-    private static  final Logger logger = LoggerFactory.getLogger(ConfigCacheImpl.class);
-    @Autowired
-    private CfgRepository cfgRepository;
-    @Autowired
-    private CacheDao cacheDao;
+	private static final Logger logger = LoggerFactory.getLogger(ConfigCacheImpl.class);
+	@Autowired
+	private CfgRepository cfgRepository;
+	@Autowired
+	private CacheDao cacheDao;
 
-    @Override
-    public Object get(String key) {
-        return (String) cacheDao.hget(EhcacheDao.CONSTANT,key);
-    }
+	@Override
+	public Object get(String key) {
+		return (String) cacheDao.hget(EhcacheDao.CONSTANT, key);
+	}
 
-    @Override
-    public String get(String key, boolean local) {
-        String ret = null;
-        if(local) {
-             ret = (String) get(key);
-        }else{
-            ret = cfgRepository.findByCfgName(key).getCfgValue();
-            set(key,ret);
-        }
-        return ret;
-    }
+	@Override
+	public String get(String key, boolean local) {
+		String ret = null;
+		if (local) {
+			ret = (String) get(key);
+		} else {
+			ret = cfgRepository.findByCfgName(key).getCfgValue();
+			set(key, ret);
+		}
+		return ret;
+	}
 
-    @Override
-    public String get(String key, String def) {
-        String ret = (String) get(key);
-        if(StringUtils.isEmpty(ret)){
-            return ret;
-        }
-        return ret;
-    }
+	@Override
+	public String get(String key, String def) {
+		String ret = (String) get(key);
+		if (StringUtils.isEmpty(ret)) {
+			return ret;
+		}
+		return ret;
+	}
 
+	@Override
+	public void set(String key, Object val) {
+		cacheDao.hset(EhcacheDao.CONSTANT, key, val);
+	}
 
-    @Override
-    public void set(String key, Object val) {
-        cacheDao.hset(EhcacheDao.CONSTANT,key,val);
-    }
+	@Override
+	public void del(String key, String val) {
+		cacheDao.hdel(EhcacheDao.CONSTANT, val);
+	}
 
-    @Override
-    public void del(String key, String val) {
-        cacheDao.hdel(EhcacheDao.CONSTANT,val);
-    }
-
-    @Override
-    public void cache() {
-        logger.info("reset config cache");
-        List<Cfg> list = cfgRepository.findAll();
-        if (list != null && !list.isEmpty()) {
-            for (Cfg cfg : list) {
-                if (StringUtils.isNotEmpty(cfg.getCfgName()) && StringUtils.isNotEmpty(cfg.getCfgValue())) {
-                    set(cfg.getCfgName(),cfg.getCfgValue());
-                }
-            }
-        }
-    }
+	@Override
+	public void cache() {
+		logger.info("reset config cache");
+		List<Cfg> list = cfgRepository.findAll();
+		if (list != null && !list.isEmpty()) {
+			for (Cfg cfg : list) {
+				if (StringUtils.isNotEmpty(cfg.getCfgName()) && StringUtils.isNotEmpty(cfg.getCfgValue())) {
+					set(cfg.getCfgName(), cfg.getCfgValue());
+				}
+			}
+		}
+	}
 }

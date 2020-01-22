@@ -1,6 +1,5 @@
 package cn.enilu.guns.utils;
 
-
 import com.google.common.base.Strings;
 
 import java.util.HashSet;
@@ -11,7 +10,8 @@ import java.util.regex.Pattern;
 public class MobileUtil {
 	public static final Set<String> prefixIds = new HashSet<String>();
 
-    final static Pattern PHONE_START_WITH_ZERO = Pattern.compile("^01(3[0-9]|4[579]|5[0-35-9]|7[0135678]|8[0-9])[0-9]{8}$");
+	final static Pattern PHONE_START_WITH_ZERO = Pattern
+			.compile("^01(3[0-9]|4[579]|5[0-35-9]|7[0135678]|8[0-9])[0-9]{8}$");
 
 	static {
 		prefixIds.add("12590");
@@ -19,10 +19,12 @@ public class MobileUtil {
 		prefixIds.add("17901");
 		prefixIds.add("17911");
 		prefixIds.add("17951");
-        prefixIds.add("10193");
+		prefixIds.add("10193");
 	}
 
-	public enum MobileType {ChinaTelecom, ChinaUnicom, ChinaMobile, UnKnow}
+	public enum MobileType {
+		ChinaTelecom, ChinaUnicom, ChinaMobile, UnKnow
+	}
 
 	final static String chinaTelecomRegex = "(133|153|180|181|189|177|173)\\d{8}|1700\\d{7}";
 	final static String chinaUnicomRegex = "(130|131|132|155|156|145|185|186|176)\\d{8}|1709\\d{7}";
@@ -62,10 +64,10 @@ public class MobileUtil {
 			}
 		}
 
-        if (PHONE_START_WITH_ZERO.matcher(value).matches()) {
-            value = value.substring(1);
+		if (PHONE_START_WITH_ZERO.matcher(value).matches()) {
+			value = value.substring(1);
 
-        }
+		}
 
 		// 如果号码是10位，且前2位是10,21,22,23,24,25,26,27,28,29，应该是固话，在第一位补上0
 		// 如果号码是10位，且第1位是3,4,5,6,7,8,9（非400、800开头），应该也是固话，在第一位补上0

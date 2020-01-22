@@ -9,7 +9,6 @@ public interface Cache {
 	 */
 	void cache();
 
-
 	/**
 	 * 获取缓存数据
 	 *
@@ -18,7 +17,6 @@ public interface Cache {
 	 */
 	Object get(String key);
 
-
 	/**
 	 * 设置缓存数据
 	 *
@@ -26,6 +24,5 @@ public interface Cache {
 	 * @param val
 	 */
 	void set(String key, Object val);
-
 
 }

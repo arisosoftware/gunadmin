@@ -16,12 +16,12 @@ import java.util.Optional;
  */
 @Configuration
 public class UserIDAuditorConfig implements AuditorAware<Long> {
-    @Override
-    public Optional<Long> getCurrentAuditor() {
-        ShiroUser shiroUser = ShiroKit.getUser();
-        if(shiroUser!=null){
-            return Optional.of(shiroUser.getId());
-        }
-        return Optional.of(Constants.SYSTEM_USER_ID);
-    }
+	@Override
+	public Optional<Long> getCurrentAuditor() {
+		ShiroUser shiroUser = ShiroKit.getUser();
+		if (shiroUser != null) {
+			return Optional.of(shiroUser.getId());
+		}
+		return Optional.of(Constants.SYSTEM_USER_ID);
+	}
 }

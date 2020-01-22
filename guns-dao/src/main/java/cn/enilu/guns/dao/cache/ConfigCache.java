@@ -5,9 +5,9 @@ package cn.enilu.guns.dao.cache;
  */
 public interface ConfigCache extends Cache {
 
-
 	/**
 	 * 获取全局配置参数值，可选本地缓存
+	 * 
 	 * @param key
 	 * @return
 	 */
@@ -24,6 +24,7 @@ public interface ConfigCache extends Cache {
 
 	/**
 	 * 删除缓存
+	 * 
 	 * @param key
 	 * @param val
 	 */

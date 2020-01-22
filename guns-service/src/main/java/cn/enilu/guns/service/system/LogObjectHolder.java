@@ -15,20 +15,20 @@ import java.io.Serializable;
  */
 @Component
 @Scope(scopeName = WebApplicationContext.SCOPE_SESSION)
-public class LogObjectHolder implements Serializable{
+public class LogObjectHolder implements Serializable {
 
-    private Object object = null;
+	private Object object = null;
 
-    public void set(Object obj) {
-        this.object = obj;
-    }
+	public void set(Object obj) {
+		this.object = obj;
+	}
 
-    public Object get() {
-        return object;
-    }
+	public Object get() {
+		return object;
+	}
 
-    public static LogObjectHolder me(){
-        LogObjectHolder bean = SpringContextHolder.getBean(LogObjectHolder.class);
-        return bean;
-    }
+	public static LogObjectHolder me() {
+		LogObjectHolder bean = SpringContextHolder.getBean(LogObjectHolder.class);
+		return bean;
+	}
 }

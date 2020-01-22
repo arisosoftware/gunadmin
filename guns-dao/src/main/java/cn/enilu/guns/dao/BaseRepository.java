@@ -15,14 +15,18 @@ import java.util.List;
  * @date ：Created in 2019/6/29 12:50
  */
 @NoRepositoryBean
-public interface BaseRepository<T, ID extends Serializable> extends JpaRepository<T, ID>
-        , PagingAndSortingRepository<T, ID>
-        , JpaSpecificationExecutor<T> {
-    List<Object[]> queryBySql(String sql);
-    List<T> query(String sql);
-    Object getBySql(String sql);
-    T get(String sql);
-    int execute(String sql);
-    Class<T> getDataClass();
+public interface BaseRepository<T, ID extends Serializable>
+		extends JpaRepository<T, ID>, PagingAndSortingRepository<T, ID>, JpaSpecificationExecutor<T> {
+	List<Object[]> queryBySql(String sql);
+
+	List<T> query(String sql);
+
+	Object getBySql(String sql);
+
+	T get(String sql);
+
+	int execute(String sql);
+
+	Class<T> getDataClass();
 
 }

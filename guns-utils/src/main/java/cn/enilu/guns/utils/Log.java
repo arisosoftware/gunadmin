@@ -1,6 +1,5 @@
 package cn.enilu.guns.utils;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,7 +8,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Log {
 
-    public static Logger get(Class<?> clazz) {
-        return LoggerFactory.getLogger(clazz);
-    }
+	public static Logger get(Class<?> clazz) {
+		return LoggerFactory.getLogger(clazz);
+	}
 }

@@ -13,15 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Date 2017/5/21 12:06
  */
 
-public class CfgRepositoryTest  extends BaseApplicationStartTest{
-    @Autowired
-    CfgRepository cfgRepository;
+public class CfgRepositoryTest extends BaseApplicationStartTest {
+	@Autowired
+	CfgRepository cfgRepository;
 
-    @Test
-    public void findByCfgName() {
-        Cfg cfg = cfgRepository.findByCfgName("JS_API_TICKET");
-        System.out.println(JSON.toJSON(cfg));
-        Cfg cfg2 = cfgRepository.findByCfgName("JS_API_TICKET");
-        System.out.println(JSON.toJSON(cfg2));
-    }
+	@Test
+	public void findByCfgName() {
+		Cfg cfg = cfgRepository.findByCfgName("JS_API_TICKET");
+		System.out.println(JSON.toJSON(cfg));
+		Cfg cfg2 = cfgRepository.findByCfgName("JS_API_TICKET");
+		System.out.println(JSON.toJSON(cfg2));
+	}
 }
