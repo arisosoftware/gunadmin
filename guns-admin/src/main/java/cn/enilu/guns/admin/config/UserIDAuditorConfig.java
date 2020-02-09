@@ -15,7 +15,7 @@ import java.util.Optional;
  * @version 2019/1/8 0008
  */
 @Configuration
-public class UserIDAuditorConfig implements AuditorAware<Long> {
+public class UserIDAuditorConfig implements AuditorAware<Optional<Long>> {
 	@Override
 	public Optional<Long> getCurrentAuditor() {
 		ShiroUser shiroUser = ShiroKit.getUser();

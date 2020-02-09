@@ -31,11 +31,7 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>cn.enilu</groupId>
-			<artifactId>guns-service</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -57,18 +53,33 @@
 			<groupId>com.github.penggle</groupId>
 			<artifactId>kaptcha</artifactId>
 		</dependency>
-
-
 		<dependency>
 			<groupId>com.google.zxing</groupId>
 			<artifactId>core</artifactId>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.nutz/nutz -->
+		<dependency>
+			<groupId>org.nutz</groupId>
+			<artifactId>nutz</artifactId>
+			<version>1.r.68.v20191031</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons-core -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-commons-core</artifactId>
+			<version>1.1.0.RELEASE</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency><!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.5.0</version>
 		</dependency>
+
 	</dependencies>
 	<build>
 
@@ -94,6 +105,19 @@
 					<warName>guns-lite</warName>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<resources>
