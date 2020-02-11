@@ -1,0 +1,115 @@
+2020-2-11 00:02:29 [restartedMain] INFO [AdminApplication]:50 Starting AdminApplication on vim-VirtualBox with PID 16175 (/home/vim/git/gunadmin/guns-admin/target/classes started by vim in /home/vim/git/gunadmin/guns-admin)
+2020-2-11 00:02:29 [restartedMain] DEBUG [AdminApplication]:53 Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-2-11 00:02:29 [restartedMain] INFO [AdminApplication]:679 The following profiles are active: dev
+2020-2-11 00:02:29 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:227 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-2-11 00:02:29 [restartedMain] INFO [DevToolsPropertyDefaultsPostProcessor]:227 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-2-11 00:02:32 [restartedMain] INFO [RepositoryConfigurationDelegate]:126 Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-2-11 00:02:32 [restartedMain] INFO [RepositoryConfigurationDelegate]:182 Finished Spring Data repository scanning in 307ms. Found 16 repository interfaces.
+2020-2-11 00:02:32 [restartedMain] INFO [RepositoryConfigurationDelegate]:126 Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-2-11 00:02:32 [restartedMain] INFO [RepositoryConfigurationDelegate]:182 Finished Spring Data repository scanning in 101ms. Found 16 repository interfaces.
+2020-2-11 00:02:34 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'shiroConfig' of type [cn.enilu.guns.admin.config.web.ShiroConfig$$EnhancerBySpringCGLIB$$3a043beb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:34 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'webConfig' of type [cn.enilu.guns.admin.config.web.WebConfig$$EnhancerBySpringCGLIB$$a57c2b6e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:34 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:34 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:34 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'ehCacheConfig' of type [cn.enilu.guns.admin.config.EhCacheConfig$$EnhancerBySpringCGLIB$$16a71a33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:34 [restartedMain] INFO [EhCacheManagerFactoryBean]:134 Initializing EhCache CacheManager
+2020-2-11 00:02:34 [restartedMain] WARN [CacheConfiguration]:841 Cache 'SESSION' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'SESSION' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+2020-2-11 00:02:34 [restartedMain] WARN [CacheConfiguration]:841 Cache 'APPLICATION' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'APPLICATION' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'ehcache' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'getCacheShiroManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'gunsProperties' of type [cn.enilu.guns.admin.config.properties.GunsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'defaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'shiroDbRealm' of type [cn.enilu.guns.shiro.ShiroDbRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [EhCacheManager]:158 Cache with name 'cn.enilu.guns.shiro.ShiroDbRealm.authorizationCache' does not yet exist.  Creating now.
+2020-2-11 00:02:35 [restartedMain] INFO [EhCacheManager]:165 Added EhCache named [cn.enilu.guns.shiro.ShiroDbRealm.authorizationCache]
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'methodInvokingFactoryBean' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:35 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c469f3e7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:36 [restartedMain] INFO [PostProcessorRegistrationDelegate$BeanPostProcessorChecker]:330 Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$43ea4119] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-2-11 00:02:37 [restartedMain] INFO [TomcatWebServer]:90 Tomcat initialized with port(s): 8080 (http)
+2020-2-11 00:02:37 [restartedMain] INFO [Http11NioProtocol]:173 Initializing ProtocolHandler ["http-nio-8080"]
+2020-2-11 00:02:37 [restartedMain] INFO [StandardService]:173 Starting service [Tomcat]
+2020-2-11 00:02:37 [restartedMain] INFO [StandardEngine]:173 Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-2-11 00:02:37 [restartedMain] INFO [AprLifecycleListener]:173 The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2020-2-11 00:02:37 [restartedMain] INFO [[/]]:173 Initializing Spring embedded WebApplicationContext
+2020-2-11 00:02:37 [restartedMain] INFO [ContextLoader]:296 Root WebApplicationContext: initialization completed in 8142 ms
+2020-2-11 00:02:38 [restartedMain] INFO [DruidDataSourceAutoConfigure]:56 Init DruidDataSource
+2020-2-11 00:02:39 [restartedMain] INFO [DruidDataSource]:971 {dataSource-1} inited
+2020-2-11 00:02:40 [restartedMain] INFO [LogHelper]:31 HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-2-11 00:02:41 [restartedMain] INFO [Version]:46 HHH000412: Hibernate Core {5.3.7.Final}
+2020-2-11 00:02:41 [restartedMain] INFO [Environment]:213 HHH000206: hibernate.properties not found
+2020-2-11 00:02:41 [restartedMain] INFO [Version]:49 HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-2-11 00:02:42 [restartedMain] INFO [Dialect]:157 HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-2-11 00:02:46 [restartedMain] INFO [LocalContainerEntityManagerFactoryBean]:415 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-2-11 00:02:53 [restartedMain] INFO [StdSchedulerFactory]:1184 Using default implementation for ThreadExecutor
+2020-2-11 00:02:53 [restartedMain] INFO [SchedulerSignalerImpl]:61 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-2-11 00:02:53 [restartedMain] INFO [QuartzScheduler]:240 Quartz Scheduler v.2.2.1 created.
+2020-2-11 00:02:53 [restartedMain] INFO [RAMJobStore]:155 RAMJobStore initialized.
+2020-2-11 00:02:53 [restartedMain] INFO [QuartzScheduler]:305 Scheduler meta-data: Quartz Scheduler (v2.2.1) 'scheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-2-11 00:02:53 [restartedMain] INFO [StdSchedulerFactory]:1339 Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2020-2-11 00:02:53 [restartedMain] INFO [StdSchedulerFactory]:1343 Quartz scheduler version: 2.2.1
+2020-2-11 00:02:53 [restartedMain] INFO [QuartzScheduler]:2311 JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2f2b585e
+2020-2-11 00:02:54 [restartedMain] WARN [JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration]:234 spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-2-11 00:02:56 [restartedMain] INFO [ThreadPoolTaskExecutor]:171 Initializing ExecutorService 'applicationTaskExecutor'
+2020-2-11 00:02:56 [restartedMain] INFO [OptionalLiveReloadServer]:57 LiveReload server is running on port 35729
+2020-2-11 00:02:58 [restartedMain] INFO [SchedulerFactoryBean]:726 Starting Quartz Scheduler now
+2020-2-11 00:02:58 [restartedMain] INFO [QuartzScheduler]:575 Scheduler scheduler_$_NON_CLUSTERED started.
+2020-2-11 00:02:58 [restartedMain] INFO [DocumentationPluginsBootstrapper]:80 Context refreshed
+2020-2-11 00:02:58 [restartedMain] INFO [DocumentationPluginsBootstrapper]:83 Found {0} custom documentation plugin(s)
+2020-2-11 00:02:58 [restartedMain] INFO [ApiListingReferenceScanner]:53 Scanning for api listing references
+2020-2-11 00:02:58 [restartedMain] INFO [Http11NioProtocol]:173 Starting ProtocolHandler ["http-nio-8080"]
+2020-2-11 00:02:58 [restartedMain] INFO [NioSelectorPool]:173 Using a shared selector for servlet write/read
+2020-2-11 00:02:58 [restartedMain] INFO [TomcatWebServer]:204 Tomcat started on port(s): 8080 (http) with context path ''
+2020-2-11 00:02:58 [restartedMain] INFO [AdminApplication]:59 Started AdminApplication in 30.658 seconds (JVM running for 32.236)
+2020-2-11 00:02:58 [restartedMain] INFO [StartJob]:30 start Job >>>>>>>>>>>>>>>>>>>>>>>
+2020-2-11 00:02:58 [restartedMain] DEBUG [Connection]:129 {conn-10001} setAutoCommit false
+2020-2-11 00:02:58 [restartedMain] DEBUG [Connection]:129 {conn-10001} setAutoCommit true
+2020-2-11 00:02:58 [restartedMain] DEBUG [Connection]:129 {conn-10001} setAutoCommit false
+2020-2-11 00:02:58 [restartedMain] INFO [QueryTranslatorFactoryInitiator]:47 HHH000397: Using ASTQueryTranslatorFactory
+2020-2-11 00:02:59 [restartedMain] DEBUG [Statement]:134 {conn-10001, pstmt-20000} created. select task0_.id as id1_13_, task0_.create_by as create_b2_13_, task0_.create_time as create_t3_13_, task0_.modify_by as modify_b4_13_, task0_.modify_time as modify_t5_13_, task0_.concurrent as concurre6_13_, task0_.cron as cron7_13_, task0_.data as data8_13_, task0_.disabled as disabled9_13_, task0_.exec_at as exec_at10_13_, task0_.exec_result as exec_re11_13_, task0_.job_class as job_cla12_13_, task0_.job_group as job_gro13_13_, task0_.name as name14_13_, task0_.note as note15_13_ from t_sys_task task0_ where task0_.disabled=?
+2020-2-11 00:02:59 [restartedMain] DEBUG [Statement]:134 {conn-10001, pstmt-20000, rs-50000} query executed. 13.527418 millis. select task0_.id as id1_13_, task0_.create_by as create_b2_13_, task0_.create_time as create_t3_13_, task0_.modify_by as modify_b4_13_, task0_.modify_time as modify_t5_13_, task0_.concurrent as concurre6_13_, task0_.cron as cron7_13_, task0_.data as data8_13_, task0_.disabled as disabled9_13_, task0_.exec_at as exec_at10_13_, task0_.exec_result as exec_re11_13_, task0_.job_class as job_cla12_13_, task0_.job_group as job_gro13_13_, task0_.name as name14_13_, task0_.note as note15_13_ from t_sys_task task0_ where task0_.disabled=?
+2020-2-11 00:02:59 [restartedMain] DEBUG [Connection]:129 {conn-10001} setAutoCommit true
+2020-2-11 00:02:59 [restartedMain] INFO [JobService]:102 新增任务Id：1, name:测试任务
+2020-2-11 00:02:59 [restartedMain] INFO [CacheListener]:36 .....................cache listener........................
+2020-2-11 00:02:59 [Thread-15] INFO [ConfigCacheImpl]:67 reset config cache
+2020-2-11 00:02:59 [restartedMain] INFO [AdminApplication]:50 AdminApplication is success!
+2020-2-11 00:02:59 [Thread-15] DEBUG [Connection]:129 {conn-10001} setAutoCommit false
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20001} created. select cfg0_.id as id1_3_, cfg0_.create_by as create_b2_3_, cfg0_.create_time as create_t3_3_, cfg0_.modify_by as modify_b4_3_, cfg0_.modify_time as modify_t5_3_, cfg0_.cfg_desc as cfg_desc6_3_, cfg0_.cfg_name as cfg_name7_3_, cfg0_.cfg_value as cfg_valu8_3_ from t_sys_cfg cfg0_
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20001, rs-50001} query executed. 1.474489 millis. select cfg0_.id as id1_3_, cfg0_.create_by as create_b2_3_, cfg0_.create_time as create_t3_3_, cfg0_.modify_by as modify_b4_3_, cfg0_.modify_time as modify_t5_3_, cfg0_.cfg_desc as cfg_desc6_3_, cfg0_.cfg_name as cfg_name7_3_, cfg0_.cfg_value as cfg_valu8_3_ from t_sys_cfg cfg0_
+2020-2-11 00:02:59 [Thread-15] DEBUG [Connection]:129 {conn-10001} setAutoCommit true
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20002} created. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20002, rs-50002} query executed. 5.387277 millis. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20003} created. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20003, rs-50003} query executed. 3.631467 millis. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20004} created. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20004, rs-50004} query executed. 1.437892 millis. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20005} created. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20005, rs-50005} query executed. 1.240381 millis. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20006} created. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20006, rs-50006} query executed. 5.270503 millis. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20007} created. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20007, rs-50007} query executed. 12.880129 millis. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20008} created. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:02:59 [Thread-15] DEBUG [Statement]:134 {conn-10001, pstmt-20008, rs-50008} query executed. 12.89298 millis. select dict0_.id as id1_5_, dict0_.create_by as create_b2_5_, dict0_.create_time as create_t3_5_, dict0_.modify_by as modify_b4_5_, dict0_.modify_time as modify_t5_5_, dict0_.name as name6_5_, dict0_.pid as pid7_5_, dict0_.value as value8_5_ from t_sys_dict dict0_ where dict0_.pid=?
+2020-2-11 00:17:43 [Thread-14] INFO [QuartzScheduler]:613 Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-2-11 00:17:43 [Thread-14] INFO [ThreadPoolTaskExecutor]:208 Shutting down ExecutorService 'applicationTaskExecutor'
+2020-2-11 00:17:43 [Thread-14] INFO [SchedulerFactoryBean]:844 Shutting down Quartz Scheduler
+2020-2-11 00:17:43 [Thread-14] INFO [QuartzScheduler]:694 Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2020-2-11 00:17:43 [Thread-14] INFO [QuartzScheduler]:613 Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-2-11 00:17:43 [Thread-14] INFO [QuartzScheduler]:771 Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
+2020-2-11 00:17:43 [Thread-14] INFO [LocalContainerEntityManagerFactoryBean]:597 Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-2-11 00:17:43 [Thread-14] INFO [DruidDataSource]:1908 {dataSource-1} closed
+2020-2-11 00:17:43 [Thread-14] INFO [EhCacheManagerFactoryBean]:192 Shutting down EhCache CacheManager
