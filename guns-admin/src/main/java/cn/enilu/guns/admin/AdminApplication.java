@@ -15,12 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-/**
- * SpringBoot方式启动类
- *
- * @author stylefeng
- * @Date 2017/5/21 12:06
- */
+
 @SpringBootApplication
 @EnableCaching
 @ComponentScan(basePackages = "cn.enilu.guns")

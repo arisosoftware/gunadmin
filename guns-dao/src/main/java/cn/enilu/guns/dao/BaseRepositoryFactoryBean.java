@@ -13,12 +13,7 @@ import org.springframework.util.Assert;
 import javax.persistence.EntityManager;
 import java.io.Serializable;
 
-/**
- * 自定义repository工厂类
- *
- * @author ：enilu
- * @date ：Created in 2019/6/29 12:59
- */
+
 public class BaseRepositoryFactoryBean<JR extends JpaRepository<T, ID>, T, ID extends Serializable>
 		extends JpaRepositoryFactoryBean<JR, T, ID> {
 	public BaseRepositoryFactoryBean(Class<? extends JR> repositoryInterface) {

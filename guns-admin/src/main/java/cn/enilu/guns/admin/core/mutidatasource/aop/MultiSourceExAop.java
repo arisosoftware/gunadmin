@@ -18,12 +18,7 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
-/**
- * 多数据源切换的aop
- *
- * @author fengshuonan
- * @date 2017年3月5日 上午10:22:16
- */
+
 @Aspect
 @Component
 @ConditionalOnProperty(prefix = "guns", name = "muti-datasource-open", havingValue = "true")

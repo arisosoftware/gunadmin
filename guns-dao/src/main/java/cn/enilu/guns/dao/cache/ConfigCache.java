@@ -1,8 +1,6 @@
 package cn.enilu.guns.dao.cache;
 
-/**
- * 全局配置数据访问
- */
+
 public interface ConfigCache extends Cache {
 
 	/**

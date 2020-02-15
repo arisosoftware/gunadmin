@@ -15,11 +15,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- *
- * @author ：enilu
- * @date ：Created in 2019/6/29 22:32
- */
+
 public abstract class BaseService<T, ID extends Serializable, R extends BaseRepository<T, ID>>
 		implements CrudService<T, ID> {
 	@Autowired

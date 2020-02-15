@@ -7,12 +7,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Date;
 
-/**
- * 对比两个对象的变化的工具类
- *
- * @author fengshuonan
- * @Date 2017/3/31 10:36
- */
+
 public class SimpleContrast {
 
 	// 记录每个修改字段的分隔符

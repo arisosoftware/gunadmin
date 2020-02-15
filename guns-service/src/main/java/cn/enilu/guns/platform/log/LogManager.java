@@ -4,12 +4,7 @@ import java.util.TimerTask;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/**
- * 日志管理器
- *
- * @author fengshuonan
- * @date 2017-03-30 16:29
- */
+
 public class LogManager {
 
 	// 日志记录操作延时

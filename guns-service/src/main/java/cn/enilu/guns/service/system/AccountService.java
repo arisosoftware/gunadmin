@@ -15,12 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * AccountService
- *
- * @author enilu
- * @version 2018/9/12 0012
- */
+
 @Service
 public class AccountService {
 	@Autowired

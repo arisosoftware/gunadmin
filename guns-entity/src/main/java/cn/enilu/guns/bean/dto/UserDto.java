@@ -5,12 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-/**
- * 用户传输bean
- * 
- * @author stylefeng
- * @Date 2017/5/5 22:40
- */
+
 @Data
 public class UserDto{
 

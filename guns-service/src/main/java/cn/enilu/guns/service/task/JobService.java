@@ -17,9 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 任务服务
- */
+
 @Service
 public class JobService {
 	private static final Logger logger = LoggerFactory.getLogger(JobService.class);

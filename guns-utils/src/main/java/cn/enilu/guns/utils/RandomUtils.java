@@ -3,9 +3,7 @@ package cn.enilu.guns.utils;
 import java.text.DecimalFormat;
 import java.util.*;
 
-/**
- * 随机数工具
- */
+
 public class RandomUtils {
 
 	private static char[] alpha = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',

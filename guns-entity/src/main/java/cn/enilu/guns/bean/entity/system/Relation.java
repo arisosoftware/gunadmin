@@ -9,11 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
-/**
- * Created  on 2018/4/2 0002.
- *
- * @author enilu
- */
+
 @Entity(name="t_sys_relation")
 @Table(appliesTo = "t_sys_relation",comment = "角色菜单关系")
 @Data

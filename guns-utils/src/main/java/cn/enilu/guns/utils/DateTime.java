@@ -2,12 +2,7 @@ package cn.enilu.guns.utils;
 
 import java.util.Date;
 
-/**
- * 封装java.util.Date
- * 
- * @author xiaoleilu
- *
- */
+
 public class DateTime extends Date {
 	private static final long serialVersionUID = -5395712593979185936L;
 

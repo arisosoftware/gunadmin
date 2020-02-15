@@ -39,12 +39,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * 系统管理员控制器
- *
- * @author fengshuonan
- * @Date 2017年1月11日 下午1:08:17
- */
+
 @Controller
 @RequestMapping("/mgr")
 public class UserMgrController extends BaseController {

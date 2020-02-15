@@ -2,13 +2,7 @@ package cn.enilu.guns.admin.core.util;
 
 import java.util.Random;
 
-/***
- * 
- * 得到中文首字母
- * 
- * @author lxm_09
- * 
- */
+
 
 public class PingYinUtil {
 

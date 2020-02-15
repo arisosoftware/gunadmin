@@ -26,9 +26,7 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 任务计划服务
- */
+
 @Service
 public class TaskService extends BaseService<Task, Long, TaskRepository> {
 	private static final Logger logger = LoggerFactory.getLogger(TaskService.class);

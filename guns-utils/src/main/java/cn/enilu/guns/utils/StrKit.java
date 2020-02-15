@@ -11,12 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-/**
- * 字符串工具类
- * 
- * @author xiaoleilu
- *
- */
+
 public class StrKit {
 
 	public static final String SPACE = " ";

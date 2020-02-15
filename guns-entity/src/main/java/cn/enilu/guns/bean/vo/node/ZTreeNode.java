@@ -1,12 +1,6 @@
 package cn.enilu.guns.bean.vo.node;
 
-/**
- * 
- * jquery ztree 插件的节点
- * 
- * @author fengshuonan
- * @date 2017年2月17日 下午8:25:14
- */
+
 public class ZTreeNode {
 
 	private Long id;	//节点id

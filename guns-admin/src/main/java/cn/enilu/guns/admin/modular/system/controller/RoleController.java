@@ -36,12 +36,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * 角色控制器
- *
- * @author fengshuonan
- * @Date 2017年2月12日21:59:14
- */
+
 @Controller
 @RequestMapping("/role")
 public class RoleController extends BaseController {

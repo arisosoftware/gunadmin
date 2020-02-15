@@ -21,12 +21,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * 根据java model定义生成，service，controller， <br>
- * </p> Copyright by easecredit.com<br>
- * 作者: zhangtao <br>
- * 创建日期: 16-7-10<br>
- */
+
 public class EntityDescLoader extends  Loader {
     
     private static final Log log = Logs.get();

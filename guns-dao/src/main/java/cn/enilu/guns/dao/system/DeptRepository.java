@@ -6,11 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-/**
- * Created on 2018/3/21 0021.
- *
- * @author enilu
- */
+
 public interface DeptRepository extends BaseRepository<Dept, Long> {
 	List<Dept> findByPidsLike(String pid);
 

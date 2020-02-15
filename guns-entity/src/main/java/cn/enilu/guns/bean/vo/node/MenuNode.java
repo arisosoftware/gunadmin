@@ -6,11 +6,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * @author fengshuonan
- * @Description 菜单的节点
- * @date 2016年12月6日 上午11:34:17
- */
+
 public class MenuNode implements Comparable {
 
     /**

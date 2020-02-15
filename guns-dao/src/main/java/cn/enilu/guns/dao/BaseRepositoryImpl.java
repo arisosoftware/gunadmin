@@ -7,12 +7,7 @@ import javax.persistence.EntityManager;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * 基础dao实现类
- *
- * @author ：enilu
- * @date ：Created in 2019/6/29 12:53
- */
+
 public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRepository<T, ID>
 		implements BaseRepository<T, ID> {
 	private final EntityManager entityManager;

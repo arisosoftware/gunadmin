@@ -24,12 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-/**
- * 部门控制器
- *
- * @author fengshuonan
- * @Date 2017年2月17日20:27:22
- */
+
 @Controller
 @RequestMapping("/dept")
 public class DeptController extends BaseController {

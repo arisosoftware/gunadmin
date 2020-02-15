@@ -26,12 +26,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/**
- * 日志记录
- *
- * @author fengshuonan
- * @date 2016年12月6日 下午8:48:30
- */
+
 @Aspect
 @Component
 public class LogAop {

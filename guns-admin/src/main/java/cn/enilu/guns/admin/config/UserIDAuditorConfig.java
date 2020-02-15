@@ -8,12 +8,7 @@ import org.springframework.data.domain.AuditorAware;
 
 import java.util.Optional;
 
-/**
- * UserIDAuditorBean
- *
- * @author zt
- * @version 2019/1/8 0008
- */
+
 @Configuration
 public class UserIDAuditorConfig implements AuditorAware<Optional<Long>> {
 	@Override

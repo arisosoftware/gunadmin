@@ -12,11 +12,7 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Date;
 
-/**
- * 加密工具类
- * 
- * @author enilu
- */
+
 public class CryptUtils {
 
 	private static final String DES = "DES";

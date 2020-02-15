@@ -12,11 +12,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * 属性（数据库列）基本信息描述<br>
- * 作者: zhangtao <br>
- * 创建日期: 16-7-5<br>
- */
+
 public class ColumnDescriptor {
 	private static Map<String, Class<?>> typeMapping = new HashMap<String,Class<?>>();
 

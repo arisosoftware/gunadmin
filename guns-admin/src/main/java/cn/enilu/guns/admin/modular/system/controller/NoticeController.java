@@ -23,12 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * 通知控制器
- *
- * @author fengshuonan
- * @Date 2017-05-09 23:02:21
- */
+
 @Controller
 @RequestMapping("/notice")
 public class NoticeController extends BaseController {

@@ -7,9 +7,7 @@ import org.hibernate.annotations.Table;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-/**
- * 消息发送者
- */
+
 @Data
 @Entity(name="t_message_sender")
 @Table(appliesTo = "t_message_sender",comment = "消息发送者")

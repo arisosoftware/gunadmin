@@ -4,12 +4,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
 
-/**
- * 添加管理员的请求bean
- *
- * @author fengshuonan
- * @Date 2017年1月12日 下午6:46:24
- */
+
 public class ReqAddManager {
 
 	// 用户姓名

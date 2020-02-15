@@ -19,11 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-/**
- * 入口类<br>
- * 作者: enilu <br>
- * 创建日期: 16-7-5<br>
- */
+
 public class Generator {
     private static final Log log = Logs.get();
     private final TableDescriptor table;

@@ -24,12 +24,7 @@ import org.springframework.stereotype.Service;
 import java.text.MessageFormat;
 import java.util.*;
 
-/**
- * MessageService
- *
- * @author enilu
- * @version 2019/05/17 0017
- */
+
 @Service
 public class MessageService extends BaseService<Message, Long, MessageRepository> {
 	private Logger logger = LoggerFactory.getLogger(getClass());

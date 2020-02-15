@@ -2,11 +2,7 @@ package cn.enilu.guns.admin.common.constant.enums;
 
 import java.io.Serializable;
 
-/**
- * 通用的业务状态
- *
- * @author zhfish
- */
+
 public enum Status {
 	未启用(0), 启用(1);
 

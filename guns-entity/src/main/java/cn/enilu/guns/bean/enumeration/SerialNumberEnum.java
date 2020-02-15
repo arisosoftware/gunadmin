@@ -1,9 +1,6 @@
 package cn.enilu.guns.bean.enumeration;
 
-/**
- * Created by deanyule on 17/4/13.
- * 系统各种编号枚举
- */
+
 public enum SerialNumberEnum {
 
     //交易编号

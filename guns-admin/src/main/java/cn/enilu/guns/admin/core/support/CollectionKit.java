@@ -7,12 +7,7 @@ import java.lang.reflect.Array;
 import java.util.*;
 import java.util.Map.Entry;
 
-/**
- * 集合相关工具类，包括数组
- * 
- * @author xiaoleilu
- * 
- */
+
 public class CollectionKit {
 
 	private CollectionKit() {

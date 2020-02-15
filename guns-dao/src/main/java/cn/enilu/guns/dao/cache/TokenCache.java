@@ -6,9 +6,7 @@ import cn.enilu.guns.utils.HttpKit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * 用户登录时，生成的Token与用户ID的对应关系
- */
+
 @Service
 public class TokenCache {
 

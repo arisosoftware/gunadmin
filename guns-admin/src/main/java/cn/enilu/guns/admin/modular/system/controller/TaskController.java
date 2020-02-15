@@ -19,11 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * Created on 2018/4/9 0009. 系统参数
- * 
- * @author enilu
- */
+
 @Controller
 @RequestMapping("/task")
 public class TaskController extends BaseController {

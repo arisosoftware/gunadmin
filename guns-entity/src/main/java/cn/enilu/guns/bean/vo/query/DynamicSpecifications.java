@@ -9,12 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * descript
- *
- * @author ：enilu
- * @date ：Created in 2019/6/30 16:04
- */
+
 public class DynamicSpecifications {
 
 

@@ -4,12 +4,7 @@ import cn.enilu.guns.bean.dto.UserDto;
 import cn.enilu.guns.bean.entity.system.User;
 import org.springframework.beans.BeanUtils;
 
-/**
- * 用户创建工厂
- *
- * @author fengshuonan
- * @date 2017-05-05 22:43
- */
+
 public class UserFactory {
 
 	public static User createUser(UserDto userDto, User user) {

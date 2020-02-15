@@ -1,11 +1,6 @@
 package cn.enilu.guns.admin.common.constant.state;
 
-/**
- * 菜单是否打开的状态
- *
- * @author fengshuonan
- * @Date 2017年4月8日10:12:15
- */
+
 public enum MenuOpenStatus {
 
 	OPEN(1, "打开"), CLOSE(0, "关闭");

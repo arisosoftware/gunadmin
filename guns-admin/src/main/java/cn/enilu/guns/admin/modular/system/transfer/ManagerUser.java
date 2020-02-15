@@ -2,12 +2,7 @@ package cn.enilu.guns.admin.modular.system.transfer;
 
 import java.util.Date;
 
-/**
- * 管理员的信息封装
- *
- * @author fengshuonan
- * @Date 2017年1月11日 下午7:46:53
- */
+
 public class ManagerUser {
 
 	private String userId;

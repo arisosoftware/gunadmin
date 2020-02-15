@@ -17,11 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 根据数据库结构生成model,service,controller,views<br>
- * 作者: zhangtao <br>
- * 创建日期: 16-7-10<br>
- */
+
 public class TableDescLoader extends Loader{
 
 

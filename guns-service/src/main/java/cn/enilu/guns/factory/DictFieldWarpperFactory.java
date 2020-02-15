@@ -9,12 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Method;
 
-/**
- * 字段的包装创建工厂
- *
- * @author fengshuonan
- * @date 2017-05-06 15:12
- */
+
 public class DictFieldWarpperFactory {
 	private static Logger logger = LoggerFactory.getLogger(DictFieldWarpperFactory.class);
 

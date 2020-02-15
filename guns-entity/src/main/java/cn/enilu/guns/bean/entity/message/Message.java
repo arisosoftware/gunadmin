@@ -7,9 +7,7 @@ import org.hibernate.annotations.Table;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-/**
- * 历史消息
- */
+
 @Data
 @Entity(name="t_message")
 @Table(appliesTo = "t_message",comment = "历史消息")

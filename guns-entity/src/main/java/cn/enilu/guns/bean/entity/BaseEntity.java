@@ -15,11 +15,7 @@ import java.util.Date;
 
 
 
-/**
- * Created  on 2019/1/8 0002.
- *
- * @author enilu
- */
+
 @MappedSuperclass
 @Data
 public abstract class BaseEntity implements Serializable {

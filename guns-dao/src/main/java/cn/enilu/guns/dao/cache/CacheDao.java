@@ -2,12 +2,7 @@ package cn.enilu.guns.dao.cache;
 
 import java.io.Serializable;
 
-/**
- * CacheDao
- *
- * @author enilu
- * @version 2018/9/12 0012
- */
+
 public interface CacheDao {
 
 	/**

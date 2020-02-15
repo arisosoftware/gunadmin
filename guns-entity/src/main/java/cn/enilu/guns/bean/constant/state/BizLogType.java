@@ -1,11 +1,6 @@
 package cn.enilu.guns.bean.constant.state;
 
-/**
- * 业务日志类型
- *
- * @author fengshuonan
- * @Date 2017年1月22日 下午12:14:59
- */
+
 public enum BizLogType {
 
     ALL(0, null),//全部日志

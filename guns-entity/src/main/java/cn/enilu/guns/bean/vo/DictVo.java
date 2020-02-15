@@ -1,11 +1,6 @@
 package cn.enilu.guns.bean.vo;
 
-/**
- * DictVo
- *
- * @author enilu
- * @version 2018/8/14 0014
- */
+
 public class DictVo {
     private String key;
     private String value;

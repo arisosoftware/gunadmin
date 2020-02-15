@@ -1,10 +1,6 @@
 package cn.enilu.guns.service;
 
-/**
- *
- * @author ：enilu
- * @date ：Created in 2019/6/29 22:29
- */
+
 public interface DeleteService<ID> {
 
 	/**

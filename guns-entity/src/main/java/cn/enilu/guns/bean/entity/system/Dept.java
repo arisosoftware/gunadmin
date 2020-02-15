@@ -9,11 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 
-/**
- * Created  on 2018/4/2 0002.
- *
- * @author enilu
- */
+
 @Entity(name="t_sys_dept")
 @Table(appliesTo = "t_sys_dept",comment = "部门")
 @Data

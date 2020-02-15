@@ -8,12 +8,7 @@ import cn.enilu.guns.utils.ToolUtil;
 import java.util.Date;
 import java.util.Map;
 
-/**
- * 日志列表的包装类
- *
- * @author fengshuonan
- * @date 2017年4月5日22:56:24
- */
+
 public class LogWarpper extends BaseControllerWarpper {
 
 	public LogWarpper(Object list) {

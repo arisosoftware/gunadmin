@@ -19,11 +19,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created on 2018/3/23 0023.
- *
- * @author enilu
- */
+
 @Service
 public class UserService extends BaseService<User, Long, UserRepository> {
 	@Autowired

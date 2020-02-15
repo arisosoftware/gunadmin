@@ -14,9 +14,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.security.MessageDigest;
 
-/**
- * MD5加密工具类
- */
+
 public class MD5 {
 
 	public static final Logger LOG = LoggerFactory.getLogger(MD5.class);

@@ -23,12 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * 常量的生产工厂
- *
- * @author fengshuonan
- * @date 2017年2月13日 下午10:55:21
- */
+
 @Component
 @DependsOn("springContextHolder")
 @CacheConfig

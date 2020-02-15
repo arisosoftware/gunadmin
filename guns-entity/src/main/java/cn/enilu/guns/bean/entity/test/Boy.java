@@ -8,9 +8,7 @@ import org.hibernate.annotations.Table;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-/**
- * 该实体用于测试生成代码
- */
+
 @Entity(name="t_test_boy")
 @Table(appliesTo = "t_test_boy",comment = "男孩")
 @Data

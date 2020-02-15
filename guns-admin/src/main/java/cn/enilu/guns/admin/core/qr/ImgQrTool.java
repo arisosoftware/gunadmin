@@ -21,11 +21,7 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 内嵌图片的二维码生成器
- *
- * @author lichunxi
- */
+
 public class ImgQrTool {
 
 	private static Logger log = LoggerFactory.getLogger(ImgQrTool.class);

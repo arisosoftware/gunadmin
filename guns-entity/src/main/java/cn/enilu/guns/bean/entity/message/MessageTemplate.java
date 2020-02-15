@@ -6,9 +6,7 @@ import org.hibernate.annotations.Table;
 
 import javax.persistence.*;
 
-/**
- * 消息模板
- */
+
 @Data
 @Entity(name="t_message_template")
 @Table(appliesTo = "t_message_template",comment = "消息模板")

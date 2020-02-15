@@ -17,12 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * CfgController
- *
- * @author enilu
- * @version 2018/8/9 0009
- */
+
 
 @Controller
 @RequestMapping("/cfg")

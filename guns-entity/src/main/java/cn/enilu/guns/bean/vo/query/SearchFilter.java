@@ -5,12 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.Map;
 
-/**
- * descript
- *
- * @author ：enilu
- * @date ：Created in 2019/6/30 16:02
- */
+
 public class SearchFilter {
     public enum Operator {
         EQ, LIKE, GT, LT, GTE, LTE,IN,ISNULL,ISNOTNULL

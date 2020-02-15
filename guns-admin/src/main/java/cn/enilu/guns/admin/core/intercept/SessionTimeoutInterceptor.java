@@ -11,12 +11,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
-/**
- * 验证session超时的拦截器
- *
- * @author fengshuonan
- * @date 2017年6月7日21:08:48
- */
+
 @Aspect
 @Component
 @ConditionalOnProperty(prefix = "guns", name = "session-open", havingValue = "true")

@@ -9,11 +9,7 @@ import java.lang.reflect.Method;
 import java.util.*;
 import java.util.Map.Entry;
 
-/**
- * Bean工具类
- *
- * @author Looly
- */
+
 public class BeanKit {
 
 	/**

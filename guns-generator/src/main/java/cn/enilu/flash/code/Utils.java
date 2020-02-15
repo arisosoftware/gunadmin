@@ -2,12 +2,7 @@ package cn.enilu.flash.code;
 
 import org.nutz.lang.Strings;
 
-/**
- * 工具类<br>
- * </p> Copyright by easecredit.com<br>
- * 作者: zhangtao <br>
- * 创建日期: 16-7-27<br>
- */
+
 public class Utils {
     /**
      * 将以“_”分割的单词转换为首字母小写驼峰格式

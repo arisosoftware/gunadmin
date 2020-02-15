@@ -9,12 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
-/**
- * Name: ApplicationStartTest<br>
- * User: Yao<br>
- * Date: 2018/1/24<br>
- * Time: 16:26<br>
- */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ServiceConfiguration.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)

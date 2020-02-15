@@ -1,11 +1,6 @@
 package cn.enilu.guns.admin.core.support;
 
-/**
- * 分页工具类
- * 
- * @author xiaoleilu
- * 
- */
+
 public class PageKit {
 
 	/**

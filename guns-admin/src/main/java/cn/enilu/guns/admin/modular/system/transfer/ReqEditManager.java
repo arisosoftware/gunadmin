@@ -4,12 +4,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
 
-/**
- * 编辑管理员的请求
- *
- * @author fengshuonan
- * @Date 2017年1月15日 下午10:29:16
- */
+
 public class ReqEditManager {
 
 	@NotNull

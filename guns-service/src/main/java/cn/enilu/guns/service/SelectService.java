@@ -6,11 +6,7 @@ import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
-/**
- *
- * @author ：enilu
- * @date ：Created in 2019/6/29 22:30
- */
+
 public interface SelectService<T, ID> {
 
 	/**

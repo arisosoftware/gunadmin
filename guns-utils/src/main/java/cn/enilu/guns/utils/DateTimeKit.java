@@ -8,11 +8,7 @@ import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Locale;
 
-/**
- * 时间工具类
- * 
- * @author xiaoleilu
- */
+
 public class DateTimeKit {
 	/** 毫秒 */
 	public final static long MS = 1;

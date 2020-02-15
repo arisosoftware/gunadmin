@@ -2,12 +2,7 @@ package cn.enilu.guns.service.message.email;
 
 import org.springframework.core.io.InputStreamSource;
 
-/**
- * 邮件发送接口
- *
- * @author ：enilu
- * @date ：Created in 2019/6/17 19:33
- */
+
 public interface EmailSender {
 	/**
 	 * 发送邮件

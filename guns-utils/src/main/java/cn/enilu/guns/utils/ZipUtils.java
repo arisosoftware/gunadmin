@@ -8,11 +8,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
-/**
- * 压缩和解压缩
- * 
- * @author
- */
+
 public class ZipUtils {
 	/**
 	 * 日志记录，为静态变量，防止多次实例化

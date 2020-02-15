@@ -25,12 +25,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * shiro权限管理的配置
- *
- * @author fengshuonan
- * @date 2016年11月14日 下午3:03:44
- */
+
 @Configuration
 public class ShiroConfig {
 

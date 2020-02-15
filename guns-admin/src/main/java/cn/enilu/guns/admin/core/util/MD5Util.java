@@ -3,12 +3,7 @@ package cn.enilu.guns.admin.core.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * MD5加密类（封装jdk自带的md5加密方法）
- *
- * @author fengshuonan
- * @date 2016年12月2日 下午4:14:22
- */
+
 public class MD5Util {
 
 	public static String encrypt(String source) {

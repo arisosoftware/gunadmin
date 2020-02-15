@@ -1,8 +1,6 @@
 package cn.enilu.guns.bean.enumeration;
 
-/**
- * Created by deanyule on 17/8/16.
- */
+
 public enum ProjectEnum {
 
     SCORE_CARD("ScoreCard"),

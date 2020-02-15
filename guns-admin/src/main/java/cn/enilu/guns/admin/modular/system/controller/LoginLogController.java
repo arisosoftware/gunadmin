@@ -20,12 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-/**
- * 日志管理的控制器
- *
- * @author fengshuonan
- * @Date 2017年4月5日 19:45:36
- */
+
 @Controller
 @RequestMapping("/loginLog")
 public class LoginLogController extends BaseController {

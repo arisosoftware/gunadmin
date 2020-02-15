@@ -10,12 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * DictCacheImpl
- *
- * @author zt
- * @version 2018/12/23 0023
- */
+
 @Component
 public class DictCacheImpl implements DictCache {
 	@Autowired

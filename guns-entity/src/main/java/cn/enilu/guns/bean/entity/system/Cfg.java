@@ -9,11 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 
-/**
- * Created  on 2018/4/2 0002.
- *
- * @author enilu
- */
+
 @Entity(name="t_sys_cfg")
 @Table(appliesTo = "t_sys_cfg",comment = "系统参数")
 @Data

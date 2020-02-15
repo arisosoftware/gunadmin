@@ -9,12 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * 总览信息
- *
- * @author fengshuonan
- * @Date 2017年3月4日23:05:54
- */
+
 @Controller
 @RequestMapping("/blackboard")
 public class BlackboardController extends BaseController {

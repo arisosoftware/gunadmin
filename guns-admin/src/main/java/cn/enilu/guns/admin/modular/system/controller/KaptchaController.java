@@ -18,12 +18,7 @@ import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-/**
- * 验证码生成
- *
- * @author fengshuonan
- * @date 2017-05-05 23:10
- */
+
 @Controller
 @RequestMapping("/kaptcha")
 public class KaptchaController {

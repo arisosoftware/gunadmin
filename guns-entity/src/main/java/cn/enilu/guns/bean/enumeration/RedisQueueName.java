@@ -1,9 +1,6 @@
 package cn.enilu.guns.bean.enumeration;
 
-/**
- * redis队列名称
- * Created by zt on 2017/8/25 0015.
- */
+
 public enum RedisQueueName {
     CREDIT_LIMIT("credit_limit"),COLLECTION_TAG("collection_tag");
 

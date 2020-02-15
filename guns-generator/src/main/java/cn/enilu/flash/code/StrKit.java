@@ -1,11 +1,6 @@
 package cn.enilu.flash.code;
 
-/**
- * 字符串工具类
- * 
- * @author xiaoleilu
- *
- */
+
 public class StrKit {
 
 	public static final String SPACE = " ";

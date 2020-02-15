@@ -8,12 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.io.Serializable;
 
-/**
- * EhcacheDao
- *
- * @author enilu
- * @version 2018/9/12 0012
- */
+
 @Component
 public class EhcacheDao implements CacheDao {
 	// 缓存常量，永不过期

@@ -2,12 +2,7 @@ package cn.enilu.guns.bean.dictmap;
 
 import cn.enilu.guns.bean.dictmap.base.AbstractDictMap;
 
-/**
- * 角色的字典
- *
- * @author fengshuonan
- * @date 2017-05-06 15:01
- */
+
 public class RoleDict extends AbstractDictMap {
 
     @Override

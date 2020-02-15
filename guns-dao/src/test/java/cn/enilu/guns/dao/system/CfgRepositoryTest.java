@@ -6,12 +6,7 @@ import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * 测试
- *
- * @author enilu
- * @Date 2017/5/21 12:06
- */
+
 
 public class CfgRepositoryTest extends BaseApplicationStartTest {
 	@Autowired

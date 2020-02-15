@@ -6,12 +6,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 
 import java.io.IOException;
 
-/**
- * 资源文件相关的操作类
- *
- * @author fengshuonan
- * @date 2016年11月17日 下午10:09:23
- */
+
 public class ResKit {
 
 	/**

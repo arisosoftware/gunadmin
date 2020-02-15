@@ -1,11 +1,6 @@
 package cn.enilu.guns.bean.exception;
 
-/**
- * 抽象接口
- *
- * @author fengshuonan
- * @date 2017-12-28-下午10:27
- */
+
 public interface ServiceExceptionEnum {
 
     /**

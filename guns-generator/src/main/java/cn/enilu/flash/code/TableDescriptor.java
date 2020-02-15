@@ -10,11 +10,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * 实体（表）基本信息描述类<br>
- * 作者: zhangtao <br>
- * 创建日期: 16-7-10<br>
- */
+
 public class TableDescriptor {
     private final String basePackageName;
     private final String baseUri;

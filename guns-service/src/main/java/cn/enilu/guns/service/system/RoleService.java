@@ -19,11 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Created on 2018/3/25 0025.
- *
- * @author enilu
- */
+
 @Service
 public class RoleService extends BaseService<Role, Long, RoleRepository> {
 	@Autowired

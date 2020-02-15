@@ -2,12 +2,7 @@ package cn.enilu.guns.bean.dictmap.base;
 
 import java.util.HashMap;
 
-/**
- * 字典映射抽象类
- *
- * @author fengshuonan
- * @date 2017-05-06 14:58
- */
+
 public abstract class AbstractDictMap {
 
     protected HashMap<String, String> dictory = new HashMap<>();

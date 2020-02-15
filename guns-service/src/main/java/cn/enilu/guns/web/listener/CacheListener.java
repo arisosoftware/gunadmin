@@ -8,14 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-/**
- * 系统监听器<br>
- * 系统启动时加载全局参数(t_sys_cfg标中的数据)到缓存中
- * 
- * @version 2018-12-23
- *
- * @author enilu
- */
+
 @Component
 public class CacheListener implements CommandLineRunner {
 
