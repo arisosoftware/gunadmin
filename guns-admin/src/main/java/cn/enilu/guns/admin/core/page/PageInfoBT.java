@@ -1,9 +1,8 @@
 package cn.enilu.guns.admin.core.page;
 
-import cn.enilu.guns.bean.vo.query.Page;
-
 import java.util.List;
 
+import cn.enilu.guns.bean.vo.query.Page;
 
 public class PageInfoBT<T> {
 

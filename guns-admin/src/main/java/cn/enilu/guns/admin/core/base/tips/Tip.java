@@ -1,6 +1,5 @@
 package cn.enilu.guns.admin.core.base.tips;
 
-
 public abstract class Tip {
 
 	protected int code;

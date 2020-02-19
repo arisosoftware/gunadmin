@@ -1,6 +1,5 @@
 package cn.enilu.guns.admin.core.support;
 
-
 public class ObjectKit {
 	/**
 	 * 比较两个对象是否相等。<br>

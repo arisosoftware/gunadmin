@@ -1,6 +1,5 @@
 package cn.enilu.guns.admin.core.page;
 
-
 public class PageBT {
 
 	private int limit; // 每页显示个数

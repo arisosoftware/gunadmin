@@ -1,9 +1,8 @@
 package cn.enilu.guns.admin.modular.system.transfer;
 
-import org.hibernate.validator.constraints.Length;
-
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 
 public class ReqAddManager {
 

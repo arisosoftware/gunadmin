@@ -1,9 +1,10 @@
 package cn.enilu.guns.admin.core.beetl;
 
+import org.beetl.ext.spring.BeetlGroupUtilConfiguration;
+
 import cn.enilu.guns.admin.core.util.KaptchaUtil;
 import cn.enilu.guns.service.system.impl.ConstantFactory;
 import cn.enilu.guns.utils.ToolUtil;
-import org.beetl.ext.spring.BeetlGroupUtilConfiguration;
 
 public class BeetlConfiguration extends BeetlGroupUtilConfiguration {
 

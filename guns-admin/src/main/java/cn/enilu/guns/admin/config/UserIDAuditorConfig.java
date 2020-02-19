@@ -1,13 +1,13 @@
 package cn.enilu.guns.admin.config;
 
-import cn.enilu.guns.bean.core.ShiroUser;
-import cn.enilu.guns.shiro.ShiroKit;
-import cn.enilu.guns.utils.Constants;
+import java.util.Optional;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 
-import java.util.Optional;
-
+import cn.enilu.guns.bean.core.ShiroUser;
+import cn.enilu.guns.shiro.ShiroKit;
+import cn.enilu.guns.utils.Constants;
 
 @Configuration
 public class UserIDAuditorConfig implements AuditorAware<Optional<Long>> {

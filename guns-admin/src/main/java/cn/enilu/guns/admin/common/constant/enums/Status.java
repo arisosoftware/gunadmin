@@ -2,7 +2,6 @@ package cn.enilu.guns.admin.common.constant.enums;
 
 import java.io.Serializable;
 
-
 public enum Status {
 	未启用(0), 启用(1);
 

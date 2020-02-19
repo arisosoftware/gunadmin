@@ -3,7 +3,6 @@ package cn.enilu.guns.admin.core.util;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class SqlUtil {
 
 	/**

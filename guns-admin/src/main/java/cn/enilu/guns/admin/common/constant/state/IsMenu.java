@@ -1,6 +1,5 @@
 package cn.enilu.guns.admin.common.constant.state;
 
-
 public enum IsMenu {
 
 	YES(1, "是"), NO(0, "不是");// 不是菜单的是按钮

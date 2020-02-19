@@ -1,14 +1,14 @@
 package cn.enilu.guns.admin.modular.system.controller;
 
-import cn.enilu.guns.admin.core.base.controller.BaseController;
-import cn.enilu.guns.dao.system.SysNoticeRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
-
+import cn.enilu.guns.admin.core.base.controller.BaseController;
+import cn.enilu.guns.dao.system.SysNoticeRepository;
 
 @Controller
 @RequestMapping("/blackboard")

@@ -1,9 +1,7 @@
 
-
 package cn.enilu.guns.admin.core.qr;
 
 import java.awt.image.BufferedImage;
-
 
 public final class MatrixToImageConfig {
 

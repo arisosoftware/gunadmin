@@ -1,9 +1,8 @@
 package cn.enilu.guns.admin.core.support;
 
-import cn.enilu.guns.utils.StrKit;
-
 import java.nio.charset.Charset;
 
+import cn.enilu.guns.utils.StrKit;
 
 public class HexKit {
 

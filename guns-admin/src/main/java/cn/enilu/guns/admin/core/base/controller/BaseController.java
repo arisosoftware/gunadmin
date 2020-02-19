@@ -1,21 +1,23 @@
 package cn.enilu.guns.admin.core.base.controller;
 
-import cn.enilu.guns.utils.HttpKit;
-import cn.enilu.guns.admin.core.util.FileUtil;
-import cn.enilu.guns.admin.core.base.tips.SuccessTip;
-import cn.enilu.guns.warpper.BaseControllerWarpper;
-import cn.enilu.guns.admin.core.page.PageInfoBT;
-import cn.enilu.guns.bean.vo.query.Page;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import java.io.UnsupportedEncodingException;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.UnsupportedEncodingException;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+
+import cn.enilu.guns.admin.core.base.tips.SuccessTip;
+import cn.enilu.guns.admin.core.page.PageInfoBT;
+import cn.enilu.guns.admin.core.util.FileUtil;
+import cn.enilu.guns.bean.vo.query.Page;
+import cn.enilu.guns.utils.HttpKit;
+import cn.enilu.guns.warpper.BaseControllerWarpper;
 
 public class BaseController {
 

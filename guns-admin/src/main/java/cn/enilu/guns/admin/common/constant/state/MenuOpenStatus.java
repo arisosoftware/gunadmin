@@ -1,6 +1,5 @@
 package cn.enilu.guns.admin.common.constant.state;
 
-
 public enum MenuOpenStatus {
 
 	OPEN(1, "打开"), CLOSE(0, "关闭");

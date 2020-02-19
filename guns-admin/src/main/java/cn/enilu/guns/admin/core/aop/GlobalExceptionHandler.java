@@ -1,13 +1,10 @@
 package cn.enilu.guns.admin.core.aop;
 
-import cn.enilu.guns.bean.enumeration.BizExceptionEnum;
-import cn.enilu.guns.bean.exception.GunsException;
-import cn.enilu.guns.platform.log.LogManager;
-import cn.enilu.guns.platform.log.LogTaskFactory;
-import cn.enilu.guns.shiro.ShiroKit;
-import cn.enilu.guns.utils.HttpKit;
-import cn.enilu.guns.bean.exception.InvalidKaptchaException;
-import cn.enilu.guns.admin.core.base.tips.ErrorTip;
+import java.lang.reflect.UndeclaredThrowableException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.CredentialsException;
 import org.apache.shiro.authc.DisabledAccountException;
@@ -22,10 +19,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.UndeclaredThrowableException;
-
+import cn.enilu.guns.admin.core.base.tips.ErrorTip;
+import cn.enilu.guns.bean.enumeration.BizExceptionEnum;
+import cn.enilu.guns.bean.exception.GunsException;
+import cn.enilu.guns.bean.exception.InvalidKaptchaException;
+import cn.enilu.guns.platform.log.LogManager;
+import cn.enilu.guns.platform.log.LogTaskFactory;
+import cn.enilu.guns.shiro.ShiroKit;
+import cn.enilu.guns.utils.HttpKit;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

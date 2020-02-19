@@ -1,12 +1,11 @@
 package cn.enilu.guns.admin.core.util;
 
-import cn.enilu.guns.utils.DateUtil;
-
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Date;
 
+import cn.enilu.guns.utils.DateUtil;
 
 public class SimpleContrast {
 

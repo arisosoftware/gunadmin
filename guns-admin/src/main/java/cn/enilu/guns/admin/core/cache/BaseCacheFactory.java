@@ -1,7 +1,6 @@
 
 package cn.enilu.guns.admin.core.cache;
 
-
 public abstract class BaseCacheFactory implements ICache {
 
 	@Override

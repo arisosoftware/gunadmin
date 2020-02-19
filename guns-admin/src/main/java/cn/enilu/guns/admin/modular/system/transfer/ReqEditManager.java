@@ -1,16 +1,14 @@
 package cn.enilu.guns.admin.modular.system.transfer;
 
-import org.hibernate.validator.constraints.Length;
-
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 
 public class ReqEditManager {
 
 	@NotNull
 	private String userId;
 
-	/* 用户姓名 */
 	@NotNull
 	private String userName;
 

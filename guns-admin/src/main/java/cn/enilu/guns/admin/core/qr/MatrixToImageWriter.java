@@ -1,15 +1,15 @@
 
 package cn.enilu.guns.admin.core.qr;
 
-import com.google.zxing.common.BitMatrix;
-
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Path;
 
+import javax.imageio.ImageIO;
+
+import com.google.zxing.common.BitMatrix;
 
 public final class MatrixToImageWriter {
 

@@ -1,7 +1,8 @@
 package cn.enilu.guns.admin.config.web;
 
-import cn.enilu.guns.admin.config.properties.GunsProperties;
-import cn.enilu.guns.shiro.ShiroDbRealm;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.codec.Base64;
@@ -22,9 +23,8 @@ import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
+import cn.enilu.guns.admin.config.properties.GunsProperties;
+import cn.enilu.guns.shiro.ShiroDbRealm;
 
 @Configuration
 public class ShiroConfig {

@@ -1,5 +1,29 @@
 package cn.enilu.guns.admin.modular.system.controller;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import javax.annotation.Resource;
+import javax.naming.NoPermissionException;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.google.common.base.Strings;
+
 import cn.enilu.guns.admin.config.properties.GunsProperties;
 import cn.enilu.guns.admin.core.base.controller.BaseController;
 import cn.enilu.guns.admin.core.base.tips.Tip;
@@ -22,23 +46,6 @@ import cn.enilu.guns.utils.BeanUtil;
 import cn.enilu.guns.utils.MD5;
 import cn.enilu.guns.utils.ToolUtil;
 import cn.enilu.guns.warpper.UserWarpper;
-import com.google.common.base.Strings;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.annotation.Resource;
-import javax.naming.NoPermissionException;
-import javax.validation.Valid;
-import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-
 
 @Controller
 @RequestMapping("/mgr")

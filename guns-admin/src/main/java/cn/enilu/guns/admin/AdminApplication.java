@@ -1,7 +1,5 @@
 package cn.enilu.guns.admin;
 
-import cn.enilu.guns.admin.config.properties.GunsProperties;
-import cn.enilu.guns.dao.BaseRepositoryFactoryBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +13,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import cn.enilu.guns.admin.config.properties.GunsProperties;
+import cn.enilu.guns.dao.BaseRepositoryFactoryBean;
 
 @SpringBootApplication
 @EnableCaching

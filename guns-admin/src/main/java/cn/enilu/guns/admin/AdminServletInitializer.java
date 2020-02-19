@@ -3,7 +3,6 @@ package cn.enilu.guns.admin;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-
 public class AdminServletInitializer extends SpringBootServletInitializer {
 
 	@Override

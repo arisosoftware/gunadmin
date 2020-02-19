@@ -2,7 +2,6 @@ package cn.enilu.guns.admin.core.util;
 
 import javax.servlet.http.HttpSession;
 
-
 public class HttpSessionHolder {
 
 	private static ThreadLocal<HttpSession> tl = new ThreadLocal<HttpSession>();

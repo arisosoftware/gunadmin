@@ -1,5 +1,21 @@
 package cn.enilu.guns.admin.modular.system.controller;
 
+import java.util.List;
+import java.util.Map;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.common.base.Strings;
+
 import cn.enilu.guns.admin.core.base.controller.BaseController;
 import cn.enilu.guns.admin.core.base.tips.Tip;
 import cn.enilu.guns.admin.core.support.BeanKit;
@@ -18,20 +34,6 @@ import cn.enilu.guns.service.system.impl.ConstantFactory;
 import cn.enilu.guns.utils.BeanUtil;
 import cn.enilu.guns.utils.ToolUtil;
 import cn.enilu.guns.warpper.MenuWarpper;
-import com.google.common.base.Strings;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.validation.Valid;
-import java.util.List;
-import java.util.Map;
-
 
 @Controller
 @RequestMapping("/menu")

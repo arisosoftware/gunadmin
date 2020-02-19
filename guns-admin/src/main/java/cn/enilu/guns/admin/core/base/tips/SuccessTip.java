@@ -1,6 +1,5 @@
 package cn.enilu.guns.admin.core.base.tips;
 
-
 public class SuccessTip extends Tip {
 
 	public SuccessTip() {

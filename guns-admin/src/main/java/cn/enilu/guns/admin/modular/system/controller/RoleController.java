@@ -1,29 +1,9 @@
 package cn.enilu.guns.admin.modular.system.controller;
 
-import cn.enilu.guns.admin.core.base.tips.ErrorTip;
-import cn.enilu.guns.bean.annotion.core.BussinessLog;
-import cn.enilu.guns.bean.annotion.core.Permission;
-import cn.enilu.guns.bean.constant.Const;
-import cn.enilu.guns.bean.dictmap.RoleDict;
-import cn.enilu.guns.bean.enumeration.BizExceptionEnum;
-import cn.enilu.guns.admin.core.base.controller.BaseController;
-import cn.enilu.guns.admin.core.base.tips.Tip;
-import cn.enilu.guns.admin.core.cache.CacheKit;
-import cn.enilu.guns.bean.exception.GunsException;
-import cn.enilu.guns.bean.vo.query.SearchFilter;
-import cn.enilu.guns.service.system.UserService;
-import cn.enilu.guns.utils.BeanUtil;
-import cn.enilu.guns.warpper.RoleWarpper;
-import cn.enilu.guns.bean.vo.node.ZTreeNode;
-import cn.enilu.guns.bean.constant.cache.Cache;
-import cn.enilu.guns.bean.entity.system.Role;
-import cn.enilu.guns.bean.entity.system.User;
-import cn.enilu.guns.service.system.LogObjectHolder;
-import cn.enilu.guns.service.system.RoleService;
-import cn.enilu.guns.service.system.impl.ConstantFactory;
-import cn.enilu.guns.utils.Convert;
-import cn.enilu.guns.utils.ToolUtil;
-import com.google.common.base.Strings;
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,9 +13,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.validation.Valid;
-import java.util.List;
+import com.google.common.base.Strings;
 
+import cn.enilu.guns.admin.core.base.controller.BaseController;
+import cn.enilu.guns.admin.core.base.tips.ErrorTip;
+import cn.enilu.guns.admin.core.base.tips.Tip;
+import cn.enilu.guns.admin.core.cache.CacheKit;
+import cn.enilu.guns.bean.annotion.core.BussinessLog;
+import cn.enilu.guns.bean.annotion.core.Permission;
+import cn.enilu.guns.bean.constant.Const;
+import cn.enilu.guns.bean.constant.cache.Cache;
+import cn.enilu.guns.bean.dictmap.RoleDict;
+import cn.enilu.guns.bean.entity.system.Role;
+import cn.enilu.guns.bean.entity.system.User;
+import cn.enilu.guns.bean.enumeration.BizExceptionEnum;
+import cn.enilu.guns.bean.exception.GunsException;
+import cn.enilu.guns.bean.vo.node.ZTreeNode;
+import cn.enilu.guns.bean.vo.query.SearchFilter;
+import cn.enilu.guns.service.system.LogObjectHolder;
+import cn.enilu.guns.service.system.RoleService;
+import cn.enilu.guns.service.system.UserService;
+import cn.enilu.guns.service.system.impl.ConstantFactory;
+import cn.enilu.guns.utils.BeanUtil;
+import cn.enilu.guns.utils.Convert;
+import cn.enilu.guns.utils.ToolUtil;
+import cn.enilu.guns.warpper.RoleWarpper;
 
 @Controller
 @RequestMapping("/role")

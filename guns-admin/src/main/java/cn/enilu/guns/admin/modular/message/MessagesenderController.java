@@ -1,5 +1,14 @@
 package cn.enilu.guns.admin.modular.message;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import cn.enilu.guns.admin.core.base.controller.BaseController;
 import cn.enilu.guns.bean.annotion.core.BussinessLog;
 import cn.enilu.guns.bean.constant.factory.PageFactory;
@@ -10,10 +19,6 @@ import cn.enilu.guns.bean.exception.GunsException;
 import cn.enilu.guns.bean.vo.query.Page;
 import cn.enilu.guns.service.message.MessagesenderService;
 import cn.enilu.guns.utils.ToolUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/message/sender")

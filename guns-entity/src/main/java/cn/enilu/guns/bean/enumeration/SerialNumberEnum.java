@@ -20,7 +20,7 @@ public enum SerialNumberEnum {
     TR_KJWG_WX0("TRKJWGWX0", "快捷-微信"),
     TR_KJTK_CJ0("TRKJTKCJ0", "快捷-退款-畅捷"),
     TR_KJZL_KLT("TRKJZLKLT", "快捷-直连-开联通"),
-    /**第三方抽成*/
+
     TR_CCSN_000("TRCCSN000", "第三方抽成"),
     TR_MANUL_000("TRMANUL00", "手工还款记账"),
 

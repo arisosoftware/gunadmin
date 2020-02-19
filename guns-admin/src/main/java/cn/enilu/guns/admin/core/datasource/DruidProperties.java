@@ -1,11 +1,11 @@
 package cn.enilu.guns.admin.core.datasource;
 
-import com.alibaba.druid.pool.DruidDataSource;
+import java.sql.SQLException;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.sql.SQLException;
-
+import com.alibaba.druid.pool.DruidDataSource;
 
 @Component
 @ConfigurationProperties(prefix = "spring.datasource")

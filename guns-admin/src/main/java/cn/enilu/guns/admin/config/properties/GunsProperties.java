@@ -1,11 +1,11 @@
 package cn.enilu.guns.admin.config.properties;
 
-import cn.enilu.guns.utils.ToolUtil;
+import java.io.File;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-
+import cn.enilu.guns.utils.ToolUtil;
 
 @Component
 @ConfigurationProperties(prefix = GunsProperties.PREFIX)

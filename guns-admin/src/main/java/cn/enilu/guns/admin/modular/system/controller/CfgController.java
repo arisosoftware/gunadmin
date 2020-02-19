@@ -1,5 +1,13 @@
 package cn.enilu.guns.admin.modular.system.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import cn.enilu.guns.admin.core.base.controller.BaseController;
 import cn.enilu.guns.bean.annotion.core.BussinessLog;
 import cn.enilu.guns.bean.constant.factory.PageFactory;
@@ -9,15 +17,6 @@ import cn.enilu.guns.bean.vo.query.Page;
 import cn.enilu.guns.bean.vo.query.SearchFilter;
 import cn.enilu.guns.service.system.CfgService;
 import cn.enilu.guns.utils.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-
 
 @Controller
 @RequestMapping("/cfg")

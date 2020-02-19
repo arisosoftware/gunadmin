@@ -3,7 +3,6 @@ package cn.enilu.guns.admin.core.support.exception;
 
 import cn.enilu.guns.utils.StrKit;
 
-
 public class ToolBoxException extends RuntimeException {
 	private static final long serialVersionUID = 8247610319171014183L;
 

@@ -3,7 +3,6 @@ package cn.enilu.guns.admin.core.cache;
 
 import java.util.List;
 
-
 public interface ICache {
 
 	void put(String cacheName, Object key, Object value);

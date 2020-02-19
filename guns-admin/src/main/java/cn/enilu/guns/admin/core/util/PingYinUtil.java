@@ -2,8 +2,6 @@ package cn.enilu.guns.admin.core.util;
 
 import java.util.Random;
 
-
-
 public class PingYinUtil {
 
 	public static void main(String[] args) {

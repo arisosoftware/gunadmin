@@ -1,6 +1,5 @@
 package cn.enilu.guns.admin.core.mutidatasource;
 
-
 public class DataSourceContextHolder {
 
 	private static final ThreadLocal<String> contextHolder = new ThreadLocal<String>();

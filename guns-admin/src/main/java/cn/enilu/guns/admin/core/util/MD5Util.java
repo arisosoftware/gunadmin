@@ -3,7 +3,6 @@ package cn.enilu.guns.admin.core.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-
 public class MD5Util {
 
 	public static String encrypt(String source) {

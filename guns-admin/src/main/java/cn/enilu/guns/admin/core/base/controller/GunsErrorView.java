@@ -1,12 +1,12 @@
 package cn.enilu.guns.admin.core.base.controller;
 
-import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.View;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
 
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.View;
 
 @Component("error")
 public class GunsErrorView implements View {

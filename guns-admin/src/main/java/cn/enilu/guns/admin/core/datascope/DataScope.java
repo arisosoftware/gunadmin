@@ -2,7 +2,6 @@ package cn.enilu.guns.admin.core.datascope;
 
 import java.util.List;
 
-
 public class DataScope {
 
 	/**

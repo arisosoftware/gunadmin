@@ -1,14 +1,8 @@
 package cn.enilu.guns.admin.config.web;
 
-import cn.enilu.guns.admin.core.xss.XssFilter;
-import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.druid.support.http.StatViewServlet;
-import com.alibaba.druid.support.http.WebStatFilter;
-import com.alibaba.druid.support.spring.stat.BeanTypeAutoProxyCreator;
-import com.alibaba.druid.support.spring.stat.DruidStatInterceptor;
-import com.google.code.kaptcha.impl.DefaultKaptcha;
-import com.google.code.kaptcha.util.Config;
-import cn.enilu.guns.web.listener.ConfigListener;
+import java.util.Arrays;
+import java.util.Properties;
+
 import org.springframework.aop.Advisor;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
@@ -19,9 +13,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestContextListener;
 
-import java.util.Arrays;
-import java.util.Properties;
+import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.support.http.StatViewServlet;
+import com.alibaba.druid.support.http.WebStatFilter;
+import com.alibaba.druid.support.spring.stat.BeanTypeAutoProxyCreator;
+import com.alibaba.druid.support.spring.stat.DruidStatInterceptor;
+import com.google.code.kaptcha.impl.DefaultKaptcha;
+import com.google.code.kaptcha.util.Config;
 
+import cn.enilu.guns.admin.core.xss.XssFilter;
+import cn.enilu.guns.web.listener.ConfigListener;
 
 @Configuration
 public class WebConfig {

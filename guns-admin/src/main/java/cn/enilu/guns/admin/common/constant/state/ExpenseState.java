@@ -1,6 +1,5 @@
 package cn.enilu.guns.admin.common.constant.state;
 
-
 public enum ExpenseState {
 
 	SUBMITING(1, "待提交"), CHECKING(2, "待审核"), PASS(3, "审核通过"), UN_PASS(4, "未通过");

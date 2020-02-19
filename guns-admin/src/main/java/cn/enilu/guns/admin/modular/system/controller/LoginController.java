@@ -1,5 +1,19 @@
 package cn.enilu.guns.admin.modular.system.controller;
 
+import java.util.List;
+
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.google.code.kaptcha.Constants;
+
 import cn.enilu.guns.admin.core.base.controller.BaseController;
 import cn.enilu.guns.admin.core.util.ApiMenuFilter;
 import cn.enilu.guns.admin.core.util.KaptchaUtil;
@@ -14,19 +28,6 @@ import cn.enilu.guns.service.system.UserService;
 import cn.enilu.guns.shiro.ShiroKit;
 import cn.enilu.guns.utils.HttpKit;
 import cn.enilu.guns.utils.ToolUtil;
-import com.google.code.kaptcha.Constants;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.List;
-
 
 @Controller
 public class LoginController extends BaseController {

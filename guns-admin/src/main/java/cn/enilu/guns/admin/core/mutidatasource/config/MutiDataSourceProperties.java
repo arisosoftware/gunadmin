@@ -1,9 +1,9 @@
 package cn.enilu.guns.admin.core.mutidatasource.config;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import com.alibaba.druid.pool.DruidDataSource;
 
 @Component
 @ConfigurationProperties(prefix = "guns.muti-datasource")

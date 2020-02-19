@@ -1,13 +1,13 @@
 package cn.enilu.guns.admin.config.web;
 
-import cn.enilu.guns.admin.config.properties.BeetlProperties;
-import cn.enilu.guns.admin.core.beetl.BeetlConfiguration;
 import org.beetl.core.resource.ClasspathResourceLoader;
 import org.beetl.ext.spring.BeetlSpringViewResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import cn.enilu.guns.admin.config.properties.BeetlProperties;
+import cn.enilu.guns.admin.core.beetl.BeetlConfiguration;
 
 @Configuration
 public class BeetlConfig {

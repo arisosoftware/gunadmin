@@ -37,7 +37,7 @@ public class MD5 {
 	 */
 	private static MessageDigest messageDigest = null;
 
-	/** 初始化messageDigest的加密算法为MD5 */
+
 	static {
 		try {
 			messageDigest = MessageDigest.getInstance("MD5");

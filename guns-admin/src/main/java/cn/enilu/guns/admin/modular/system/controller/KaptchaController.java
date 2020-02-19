@@ -1,13 +1,7 @@
 package cn.enilu.guns.admin.modular.system.controller;
 
-import cn.enilu.guns.admin.config.properties.GunsProperties;
-import com.google.code.kaptcha.Constants;
-import com.google.code.kaptcha.Producer;
-import cn.enilu.guns.admin.core.util.FileUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
@@ -15,9 +9,17 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.google.code.kaptcha.Constants;
+import com.google.code.kaptcha.Producer;
+
+import cn.enilu.guns.admin.config.properties.GunsProperties;
+import cn.enilu.guns.admin.core.util.FileUtil;
 
 @Controller
 @RequestMapping("/kaptcha")

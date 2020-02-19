@@ -2,7 +2,6 @@ package cn.enilu.guns.admin.core.mutidatasource;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
-
 public class DynamicDataSource extends AbstractRoutingDataSource {
 
 	@Override

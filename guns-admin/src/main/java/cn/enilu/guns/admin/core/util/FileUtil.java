@@ -1,15 +1,16 @@
 package cn.enilu.guns.admin.core.util;
 
-import cn.enilu.guns.bean.exception.GunsException;
-import cn.enilu.guns.bean.exception.GunsExceptionEnum;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import cn.enilu.guns.bean.exception.GunsException;
+import cn.enilu.guns.bean.exception.GunsExceptionEnum;
 
 public class FileUtil {
 

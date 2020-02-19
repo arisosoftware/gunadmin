@@ -1,6 +1,5 @@
 package cn.enilu.guns.admin.core.support;
 
-
 public class PageKit {
 
 	/**
