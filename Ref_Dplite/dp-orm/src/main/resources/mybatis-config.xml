@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<properties>
+        <property name="dialectClass" value="net.chenlin.dp.orm.dialect.MySql5Dialect"/>
+    </properties>
+	
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    
+    <plugins>
+        <plugin interceptor="net.chenlin.dp.orm.plugins.PaginationResultSetHandlerInterceptor"/>
+        <plugin interceptor="net.chenlin.dp.orm.plugins.PaginationStatementHandlerInterceptor"/>
+    </plugins>
+    
+</configuration>

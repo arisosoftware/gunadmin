@@ -11,6 +11,8 @@
 .classpath
 .project
 logs/
+.dbeaver/
+
 
 # idea
 .idea/
